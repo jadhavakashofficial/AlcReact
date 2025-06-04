@@ -2,15 +2,171 @@ import React, { useState, useEffect, useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import YouTube from 'react-youtube';
+import { FaWhatsapp, FaLinkedin, FaInstagram, FaYoutube, FaFacebookF, FaBrain, FaAtom } from 'react-icons/fa';
+
+const Home = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    return () => setIsVisible(false);
+  }, []);
+
+  // Social links for moving lower third
+  const socialLinks = [
+    {
+      id: 'whatsapp',
+      href: 'https://wa.me/919820587467',
+      title: 'Chat on WhatsApp',
+      icon: <FaWhatsapp className="text-xl md:text-2xl" />,
+      bg: 'bg-gradient-to-br from-green-400 to-emerald-600'
+    },
+    {
+      id: 'linkedin',
+      href: 'https://www.linkedin.com/in/classictechak/',
+      title: 'LinkedIn',
+      icon: <FaLinkedin className="text-xl md:text-2xl" />,
+      bg: 'bg-gradient-to-br from-blue-500 to-indigo-700'
+    },
+    {
+      id: 'instagram',
+      href: 'https://www.instagram.com/activelearningcompany/',
+      title: 'Instagram',
+      icon: <FaInstagram className="text-xl md:text-2xl" />,
+      bg: 'bg-gradient-to-br from-pink-500 to-rose-700'
+    },
+    {
+      id: 'youtube',
+      href: 'https://www.youtube.com/@niravpakai1',
+      title: 'YouTube',
+      icon: <FaYoutube className="text-xl md:text-2xl" />,
+      bg: 'bg-gradient-to-br from-red-500 to-rose-800'
+    },
+    {
+      id: 'facebook',
+      href: 'https://www.facebook.com/ALCNiravPakai',
+      title: 'Facebook',
+      icon: <FaFacebookF className="text-xl md:text-2xl" />,
+      bg: 'bg-gradient-to-br from-blue-600 to-blue-800'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      {/* Hero Section */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            {/* Book 3D Container */}
+            <div className="relative w-full max-w-md mx-auto lg:mx-0">
+              {/* 3D Book Effect */}
+              <div className={`transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <a 
+                  href="https://thealcworld.in/wp-content/uploads/2025/05/book.png" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block perspective-1000 hover:perspective-1500 transition-all duration-700"
+                >
+                  <div className="relative book-3d transition-transform duration-700 hover:rotate-y-15">
+                    <div className="book-cover shadow-2xl rounded-lg overflow-hidden">
+                      <img 
+                        src="https://thealcworld.in/wp-content/uploads/2025/05/book.png" 
+                        alt="Featured Book" 
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    <div className="book-spine absolute top-0 left-0 w-4 h-full bg-gray-800 transform rotate-y-90 origin-left"></div>
+                    <div className="book-shadow absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-4/5 h-4 bg-black opacity-20 blur-xl rounded-full"></div>
+                  </div>
+                </a>
+              </div>
+              
+              {/* Call to Action */}
+              <div className={`mt-8 text-center lg:text-left transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <a 
+                  href="https://thealcworld.in/wp-content/uploads/2025/05/book.png" 
+                  className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-700 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  Get Your Copy Now
+                </a>
+              </div>
+            </div>
+            
+            {/* Content */}
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
+              <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+                Transform Your Learning Journey
+              </h1>
+              <p className={`text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+                Discover our revolutionary book that combines cutting-edge pedagogy with practical insights to elevate your educational experience.
+              </p>
+              <div className={`flex flex-wrap gap-4 justify-center lg:justify-start transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <div className="flex items-center px-4 py-2 bg-white rounded-full shadow">
+                  <FaBrain className="text-purple-600 mr-2" />
+                  <span>Enhanced Cognition</span>
+                </div>
+                <div className="flex items-center px-4 py-2 bg-white rounded-full shadow">
+                  <FaAtom className="text-blue-500 mr-2" />
+                  <span>Modern Pedagogy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Moving Social Lower Third */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-gray-900 to-black py-3 overflow-hidden">
+        <div className="marquee-container flex">
+          <div className="marquee-content flex space-x-8 animate-marquee whitespace-nowrap">
+            {socialLinks.map((link, index) => (
+              <a
+                key={link.id}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center justify-center rounded-full p-3 text-white shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-xl ${link.bg}`}
+                title={link.title}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+          {/* Duplicate for seamless looping */}
+          <div className="marquee-content flex space-x-8 animate-marquee whitespace-nowrap ml-8">
+            {socialLinks.map((link) => (
+              <a
+                key={`dup-${link.id}`}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center justify-center rounded-full p-3 text-white shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-xl ${link.bg}`}
+                title={link.title}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const HomePage = () => {
-  // Seminar data
+  // Seminar data - reordered as specified
   const seminars = [
+    {
+      title: "8 Colors Of Life",
+      image: "https://thealcworld.in/wp-content/uploads/2025/05/11.png",
+      content: "Our Emotions are symbolized by seven colours and their varied shades. Blending these colours of emotions in a prudent and thoughtful proportion can lead us to a brighter state of mind… Almost THE WHITE of peace and positivity.",
+      link: "https://thealcworld.in/courses/"
+    },
     {
       title: "Graphology",
       image: "https://thealcworld.in/wp-content/uploads/2025/04/3-Graphology-C.png",
       content: "The most progressive science that imparts the skill of analysing handwriting to identify and interpret a person's character. An ideal course for those who want to learn something interesting and also make headway to a flourishing career of being a Graphologist.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://webinar.thealcworld.in/"
     },
     {
       title: "Career Counselling Seminar",
@@ -19,21 +175,22 @@ const HomePage = () => {
       link: "https://thealcworld.in/courses/"
     },
     {
+      title: "Filling The Gaps",
+      image: "https://thealcworld.in/wp-content/uploads/2025/05/7-Filling-Gap-C.png",
+      content: "Who is not being understanding with whom? Parent with the child or child with the parent? Know the hidden facts of your child and channelise your child towards studies, their goals and live a happy family life by FILLING THE GAPS.",
+      link: "https://thealcworld.in/courses/"
+    },
+    // Remaining seminars in random order
+    {
       title: "Time Management",
       image: "https://thealcworld.in/wp-content/uploads/2025/05/5-Time-Management-C.png",
       content: "Complete bag of solutions for time wasters and procrastinators. A 'must attend' workshop for teenagers who are looking for correct methods of time management.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://timemanagement.thealcworld.in/"
     },
     {
       title: "Strategies To Score Good Marks",
       image: "https://thealcworld.in/wp-content/uploads/2025/05/4-Good-Marks-C.png",
       content: "An intensive practical workshop for students appearing for board exams. This workshop gives pathways, strategies, and a list of practical DOs and DONTs list for securing good marks.",
-      link: "https://thealcworld.in/courses/"
-    },
-    {
-      title: "Filling The Gaps",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/7-Filling-Gap-C.png",
-      content: "Who is not being understanding with whom? Parent with the child or child with the parent? Know the hidden facts of your child and channelise your child towards studies, their goals and live a happy family life by FILLING THE GAPS.",
       link: "https://thealcworld.in/courses/"
     },
     {
@@ -64,12 +221,6 @@ const HomePage = () => {
       title: "Conscience Awakening Journey",
       image: "https://thealcworld.in/wp-content/uploads/2025/05/12-e1748731847703.jpg",
       content: "We often neglect our conscience which leads to us into undesired situations. At a point, we realize our mistake and want to trust and follow our conscience. A journey that will take you to the Universe of your conscience thus leading you to all the keys to your locks and obstacles of your goals and dreams.",
-      link: "https://thealcworld.in/courses/"
-    },
-    {
-      title: "8 Colors Of Life",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/11.png",
-      content: "Our Emotions are symbolized by seven colours and their varied shades. Blending these colours of emotions in a prudent and thoughtful proportion can lead us to a brighter state of mind… Almost THE WHITE of peace and positivity.",
       link: "https://thealcworld.in/courses/"
     }
   ];
@@ -118,55 +269,55 @@ const HomePage = () => {
     }
   ];
 
-  // Testimonials data
+  // Testimonials data with Indian profile pictures
   const testimonials = [
     {
-      name: "Rajesh Sharma",
+      name: "Akash Jadhav",
       role: "Business Owner",
       content: "The leadership training completely transformed my approach to business. Our team productivity increased by 40% in just 3 months!",
-      image: "https://randomuser.me/api/portraits/men/32.jpg"
+      image: "https://thealcworld.in/wp-content/uploads/2025/06/91995856-3E48-4D39-AEA4-D2D45E0091B8.jpeg"
     },
     {
-      name: "Priya Mehta",
+      name: "Araman Salunkhe",
       role: "College Student",
       content: "The career counseling seminar helped me discover my true passion. I'm now pursuing my dream career in psychology!",
-      image: "https://randomuser.me/api/portraits/women/44.jpg"
+      image: "https://thealcworld.in/wp-content/uploads/2025/06/IMG_5352-scaled.jpg"
     },
     {
-      name: "Dr. Anil Kumar",
-      role: "Professor",
+      name: "Dr. Ritu Savla",
+      role: "Doctor",
       content: "The teacher training program gave me innovative techniques to engage students. My classes have never been more interactive!",
-      image: "https://randomuser.me/api/portraits/men/22.jpg"
+      image: "https://mothersnest.co.in/wp-content/uploads/2025/05/Home-1.png"
     },
     {
-      name: "Sanjana Patel",
-      role: "Graphology Student",
+      name: "Pratik Shrivastava",
+      role: "Youtuber",
       content: "The graphology course opened a new career path for me. I'm now certified and helping people understand themselves better.",
-      image: "https://randomuser.me/api/portraits/women/68.jpg"
+      image: "https://thealcworld.in/wp-content/uploads/2025/06/IMG_5646.jpg"
     },
     {
-      name: "Vikram Singh",
-      role: "Corporate Executive",
+      name: "Avinash",
+      role: "Corporate Engineer",
       content: "Nirav's mentorship helped me break through my professional plateau. I've been promoted twice in the last year!",
-      image: "https://randomuser.me/api/portraits/men/41.jpg"
+      image: "https://thealcworld.in/wp-content/uploads/2025/06/IMG_5650.jpg"
     },
     {
-      name: "Ananya Desai",
-      role: "Marketing Director",
+      name: "Arun Desai",
+      role: "Law Student",
       content: "The transformational leadership program helped me build a cohesive team that exceeded all our quarterly targets.",
-      image: "https://randomuser.me/api/portraits/women/32.jpg"
+      image: "https://thealcworld.in/wp-content/uploads/2022/12/img-coaching1.png"
     },
     {
       name: "Rahul Verma",
       role: "Software Engineer",
       content: "The time management seminar completely changed how I approach my work. I've doubled my productivity while reducing stress.",
-      image: "https://randomuser.me/api/portraits/men/51.jpg"
+      image: "https://thealcworld.in/wp-content/uploads/2022/07/team4.jpg"
     },
     {
-      name: "Neha Gupta",
+      name: "Nachiket",
       role: "School Principal",
       content: "Our teachers underwent the sharpening program and the results were phenomenal. Student engagement has increased by 60%.",
-      image: "https://randomuser.me/api/portraits/women/76.jpg"
+      image: "https://thealcworld.in/wp-content/uploads/2022/12/slider2.png"
     }
   ];
 
@@ -324,30 +475,30 @@ const HomePage = () => {
       observer.observe(counter);
     });
 
-const rotateBook = () => {
-  if (bookRef.current && isBookRotating) {
-    const rotation = (Date.now() / 50) % 360;
-    bookRef.current.style.transform = `rotateY(${rotation}deg)`;
-    bookRef.current.style.boxShadow = `0 0 30px rgba(0, ${Math.sin(rotation * Math.PI / 180) * 255}, 255, 0.8)`;
-    requestAnimationFrame(rotateBook);
-  }
-};
+    const rotateBook = () => {
+      if (bookRef.current && isBookRotating) {
+        const rotation = (Date.now() / 50) % 360;
+        bookRef.current.style.transform = `rotateY(${rotation}deg)`;
+        bookRef.current.style.boxShadow = `0 0 30px rgba(0, ${Math.sin(rotation * Math.PI / 180) * 255}, 255, 0.8)`;
+        requestAnimationFrame(rotateBook);
+      }
+    };
 
-if (isBookRotating) {
-  rotateBook();
-}
+    if (isBookRotating) {
+      rotateBook();
+    }
 
-return () => setIsBookRotating(false);
-}, [isBookRotating]);
+    return () => setIsBookRotating(false);
+  }, [isBookRotating]);
 
-  // YouTube video options
+  // YouTube video options - fixed sound issue
   const videoOptions = {
     playerVars: {
       autoplay: 1,
       controls: 0,
       rel: 0,
       showinfo: 0,
-      mute: 1,
+      mute: 0, // Unmuted for sound
       loop: 1,
       playlist: hoveredVideo
     }
@@ -365,83 +516,92 @@ return () => setIsBookRotating(false);
       
       <Header />
       
-{/* Updated Hero Section */}
-<section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
-  <div className="absolute inset-0 z-0">
-    <div className="holographic-gradient animate-gradient opacity-70"></div>
-  </div>
-  
-  <div className="relative z-10 max-w-6xl w-full">
-    <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-      <div className="w-full lg:w-1/2 text-center lg:text-left">
-        <div className="mb-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Master Leadership with ALC
-          </h1>
-          
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white h-16 md:h-20 flex items-center justify-center lg:justify-start">
-            <span className="typing-animation inline-block overflow-hidden whitespace-nowrap border-r-2 border-cyan-300 pr-1">
-              Unleash Your True Potential
-            </span>
-          </h2>
-          
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto lg:mx-0 mb-8">
-            Join 150,000+ students and professionals who transformed their lives through our corporate training and student development.
-          </p>
+      {/* Updated Hero Section with Matrix Background */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
+        {/* Faded Matrix Background */}
+        <div className="absolute inset-0 z-0 opacity-10" style={{ 
+          backgroundImage: `url('https://www.transparenttextures.com/patterns/code-pattern.png')`,
+          backgroundSize: 'cover'
+        }}></div>
+        
+        <div className="absolute inset-0 z-0">
+          <div className="holographic-gradient animate-gradient opacity-70"></div>
         </div>
         
-        <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-8">
-          <a 
-            href="https://thealcworld.in/courses/" 
-            className="cta-button relative overflow-hidden shimmer-button bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-bold py-4 px-10 rounded-full text-lg transform transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 flex items-center"
-          >
-            <span className="relative z-10">Enroll Now</span>
-            <svg className="ml-2 w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </a>
-          
-          <a 
-            href="https://thealcworld.in/about-us/" 
-            className="cta-button bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 font-bold py-4 px-10 rounded-full text-lg transform transition-all duration-300 hover:scale-105 flex items-center"
-          >
-            <span>ABOUT US</span>
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-      
-      <div className="w-full lg:w-1/2 flex justify-center mt-12 lg:mt-0">
-        <div className="relative group">
-          <div className="absolute -inset-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl blur-xl opacity-70 group-hover:opacity-90 transition-all duration-500"></div>
-          <div className="relative rounded-xl overflow-hidden border-4 border-cyan-500/30 w-80 h-80 transition-transform duration-500 group-hover:scale-105 group-hover:border-cyan-500/60">
-            <img 
-              src="https://thealcworld.in/wp-content/uploads/2025/05/23-CL-1.jpg" 
-              alt="Nirav Pakai - Founder" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-              <h3 className="text-xl font-bold text-cyan-300">Nirav Pakai</h3>
-              <p className="text-gray-300">Founder & Chief Mentor</p>
+        <div className="relative z-10 max-w-6xl w-full">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
+              <div className="mb-8">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Master Leadership with ALC
+                </h1>
+                
+                <p className="text-xl text-blue-100 max-w-2xl mx-auto lg:mx-0 mb-8">
+                  Join 150,000+ students and professionals who transformed their lives through our corporate training and student development.
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-8">
+                <a 
+                  href="/courses" 
+                  className="cta-button relative overflow-hidden shimmer-button bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-bold py-4 px-10 rounded-full text-lg transform transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 flex items-center"
+                >
+                  <span className="relative z-10">Enroll Now</span>
+                  <svg className="ml-2 w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </a>
+                
+                <a 
+                  href="/about-us" 
+                  className="cta-button bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 font-bold py-4 px-10 rounded-full text-lg transform transition-all duration-300 hover:scale-105 flex items-center"
+                >
+                  <span>ABOUT US</span>
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div className="w-full lg:w-1/2 flex flex-col items-center mt-12 lg:mt-0">
+              <div className="relative group">
+                <div className="absolute -inset-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl blur-xl opacity-70 group-hover:opacity-90 transition-all duration-500"></div>
+                <div className="relative rounded-xl overflow-hidden border-4 border-cyan-500/30 w-full max-w-md h-96 transition-transform duration-500 group-hover:scale-105 group-hover:border-cyan-500/60">
+                  <img 
+                    src="https://thealcworld.in/wp-content/uploads/2025/06/IMG_6792-e1748902478913.jpg" 
+                    alt="ALC Transformational Seminar" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                    <h3 className="text-xl font-bold text-cyan-300">Nirav Pakai</h3>
+                  </div>
+                </div>
+              </div>
+              
+              {/* New Text Below Founder Image */}
+              <div className="text-center mt-8">
+                <p className="text-2xl font-bold text-white">
+                  Leading towards <span className="line-through">Perfectionism</span>
+                </p>
+                <p className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 mt-2">
+                  Passion
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  
-  {/* Scroll indicator */}
-  <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-    <div className="animate-bounce w-8 h-8 flex items-center justify-center rounded-full bg-cyan-500/20">
-      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
-    </div>
-  </div>
-</section>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+          <div className="animate-bounce w-8 h-8 flex items-center justify-center rounded-full bg-cyan-500/20">
+            <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </div>
+        </div>
+      </section>
       
       {/* Seminars Section */}
       <section className="py-20 px-4 relative z-10">
@@ -548,7 +708,7 @@ return () => setIsBookRotating(false);
                 <p className="text-gray-300 text-center">{category.description}</p>
                 <div className="mt-6 text-center">
                   <a 
-                    href="https://thealcworld.in/courses/" 
+                    href="/courses/" 
                     className="inline-block bg-gradient-to-r from-cyan-600 to-blue-700 text-white text-sm font-medium py-2 px-4 rounded-full transition-all duration-300 hover:opacity-90"
                   >
                     Explore Programs
@@ -678,7 +838,7 @@ return () => setIsBookRotating(false);
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-center justify-center">
                         <div className="w-16 h-16 bg-black/50 rounded-full flex items-center justify-center">
                           <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5v14l11-7z"/>
                           </svg>
                         </div>
                       </div>
@@ -796,7 +956,7 @@ return () => setIsBookRotating(false);
                 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a 
-                    href="https://thealcworld.in/about-us/" 
+                    href="/about-us" 
                     className="inline-flex items-center bg-gradient-to-r from-amber-600 to-amber-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105"
                   >
                     <span>Learn More About Nirav</span>
@@ -806,10 +966,10 @@ return () => setIsBookRotating(false);
                   </a>
                   
                   <a 
-                    href="https://thealcworld.in/courses/" 
+                    href="/courses" 
                     className="inline-flex items-center bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105"
                   >
-                    <span>Book a Session</span>
+                    <span>Register Now</span>
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
@@ -858,7 +1018,7 @@ return () => setIsBookRotating(false);
           </p>
           
           <a 
-            href="https://thealcworld.in/courses/" 
+            href="/courses" 
             className="cta-button shimmer-button bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-bold py-4 px-10 rounded-full text-lg transform transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 inline-flex items-center"
           >
             <span>Secure Your Spot Now</span>
@@ -1045,6 +1205,56 @@ return () => setIsBookRotating(false);
         
         .video-testimonial iframe {
           object-fit: contain !important;
+        }
+        
+        /* New styles for hero section */
+        .holographic-gradient {
+          background: linear-gradient(45deg, 
+            rgba(0, 0, 0, 0.8) 0%, 
+            rgba(15, 23, 42, 0.8) 20%, 
+            rgba(6, 78, 59, 0.6) 40%, 
+            rgba(8, 47, 73, 0.7) 60%, 
+            rgba(88, 28, 135, 0.6) 80%, 
+            rgba(0, 0, 0, 0.8) 100%
+          );
+          background-size: 300% 300%;
+        }
+        
+        .animate-gradient {
+          animation: gradient-shift 10s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        
+        .shimmer-button {
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .shimmer-button::after {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          transform: rotate(30deg);
+          animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+          0% { transform: rotate(30deg) translateX(-100%); }
+          100% { transform: rotate(30deg) translateX(100%); }
         }
       `}</style>
     </div>

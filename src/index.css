@@ -1,4 +1,34 @@
+/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.book-3d {
+  transform-style: preserve-3d;
+  transform: rotateY(-5deg);
+}
+
+.rotate-y-15 {
+  transform: rotateY(-15deg);
+}
+
+.book-spine {
+  transform: rotateY(90deg) translateZ(-4px);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}

@@ -1,13 +1,13 @@
 // src/pages/Testimonials.jsx
-
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
 const Testimonials = () => {
   const [activeTab, setActiveTab] = useState("all");
+  const playersRef = useRef({});
 
-  // Text testimonials data
+  // Text testimonials data (12 total)
   const textTestimonials = [
     {
       id: 1,
@@ -81,9 +81,45 @@ const Testimonials = () => {
       avatar: "DR",
       type: "corporate",
     },
+    {
+      id: 9,
+      name: "Rahul Verma",
+      role: "Project Lead, TCS",
+      quote:
+        "The strategic leadership program helped me transform my team's performance. We've achieved 30% higher project completion rates since implementation.",
+      avatar: "RV",
+      type: "corporate",
+    },
+    {
+      id: 10,
+      name: "Sneha Joshi",
+      role: "Business Analyst, Deloitte",
+      quote:
+        "ALC's executive presence training gave me the confidence to present to C-suite executives. I've since led 3 successful client pitches.",
+      avatar: "SJ",
+      type: "corporate",
+    },
+    {
+      id: 11,
+      name: "Arjun Reddy",
+      role: "Computer Science Student, BITS Pilani",
+      quote:
+        "The campus leadership program helped me secure internships at Microsoft and Goldman Sachs. The mock interviews were game-changing!",
+      avatar: "AR",
+      type: "student",
+    },
+    {
+      id: 12,
+      name: "Meera Desai",
+      role: "UX Designer, Adobe",
+      quote:
+        "After ALC's conflict resolution workshop, I transformed team dynamics in my department. Collaboration has never been better!",
+      avatar: "MD",
+      type: "corporate",
+    },
   ];
 
-  // Video testimonials data
+  // Video testimonials data (first 4 only)
   const videoTestimonials = [
     {
       id: 1,
@@ -110,36 +146,9 @@ const Testimonials = () => {
     {
       id: 4,
       title: "Team Building Experience",
-      description: "Building cohesive teams at FinServe Inc. with ALC methods",
+      description:
+        "Building cohesive teams at FinServe Inc. with ALC methods",
       url: "https://youtu.be/MFniP0JiHqI",
-      type: "corporate",
-    },
-    {
-      id: 5,
-      title: "Leadership in Tech",
-      description: "Transforming tech leaders at InnovateX with ALC frameworks",
-      url: "https://youtu.be/dQw4w9WgXcQ",
-      type: "corporate",
-    },
-    {
-      id: 6,
-      title: "Campus to Corporate",
-      description: "How ALC prepares students for leadership roles",
-      url: "https://youtu.be/9bZkp7q19f0",
-      type: "student",
-    },
-    {
-      id: 7,
-      title: "Entrepreneurial Growth",
-      description: "Sanjay's startup success with ALC's mentorship",
-      url: "https://youtu.be/VYOjWnS4cMY",
-      type: "corporate",
-    },
-    {
-      id: 8,
-      title: "Global Leadership",
-      description: "Developing leaders for international markets",
-      url: "https://youtu.be/CduA0TULnow",
       type: "corporate",
     },
   ];
@@ -155,7 +164,9 @@ const Testimonials = () => {
   const filteredVideoTestimonials =
     activeTab === "all"
       ? videoTestimonials
-      : videoTestimonials.filter((testimonial) => testimonial.type === activeTab);
+      : videoTestimonials.filter(
+          (testimonial) => testimonial.type === activeTab
+        );
 
   // Helper to extract YouTube video ID from URL
   const extractYouTubeID = (url) => {
@@ -169,20 +180,57 @@ const Testimonials = () => {
     return "";
   };
 
+  // Load YouTube IFrame API and initialize players when API is ready
+  useEffect(() => {
+    const loadYouTubeAPI = () => {
+      if (!window.YT) {
+        const tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(tag);
+      } else {
+        onYouTubeIframeAPIReady();
+      }
+
+      window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+    };
+
+    const onYouTubeIframeAPIReady = () => {
+      filteredVideoTestimonials.forEach((video) => {
+        const videoId = extractYouTubeID(video.url);
+        playersRef.current[video.id] = new window.YT.Player(
+          `youtube-player-${video.id}`,
+          {
+            videoId,
+            playerVars: {
+              autoplay: 0,
+              controls: 1,
+              rel: 0,
+            },
+          }
+        );
+      });
+    };
+
+    loadYouTubeAPI();
+  }, [filteredVideoTestimonials]);
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Header />
 
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
+        {/* Hero Section with Holographic Effect */}
+        <section className="relative pt-32 pb-24 px-4 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="holographic-gradient animate-gradient opacity-40"></div>
-            <div className="absolute inset-0 bg-[url('https://assets-global.website-files.com/5e6c01bb5212506d6c119069/5e6ed103b52125522d7c8d94_5e6c01bb521250d0c21190d1_Group%208.png')] bg-cover bg-center mix-blend-soft-light opacity-20"></div>
+            <div
+              className="absolute inset-0 bg-[url('https://assets-global.website-files.com/5e6c01bb5212506d6c119069/5e6ed103b52125522d7c8d94_5e6c01bb521250d0c21190d1_Group%208.png')] bg-cover bg-center mix-blend-soft-light opacity-20"
+            ></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
           </div>
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
-            <div className="inline-block bg-cyan-900/30 backdrop-blur-sm border border-cyan-500/30 rounded-full px-6 py-2 mb-6">
+            <div className="inline-block bg-cyan-900/30 backdrop-blur-sm border border-cyan-500/30 rounded-full px-6 py-2 mb-6 animate-pulse">
               <span className="text-cyan-300 font-medium">
                 Transformational Journeys
               </span>
@@ -191,18 +239,18 @@ const Testimonials = () => {
               Success Stories
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10">
-              Hear from our students and corporate clients about their transformational
-              journeys with ALC
+              Hear from our students and corporate clients about their
+              transformational journeys with ALC
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-gradient-to-r from-cyan-600 to-blue-700 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="bg-gradient-to-r from-cyan-600 to-blue-700 w-16 h-16 rounded-full flex items-center justify-center glow-cyan">
                 <span className="text-white font-bold text-lg">150K+</span>
               </div>
-              <div className="bg-gradient-to-r from-amber-600 to-yellow-600 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="bg-gradient-to-r from-amber-600 to-yellow-600 w-16 h-16 rounded-full flex items-center justify-center glow-amber">
                 <span className="text-white font-bold text-lg">95%</span>
               </div>
-              <div className="bg-gradient-to-r from-emerald-600 to-teal-600 w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="bg-gradient-to-r from-emerald-600 to-teal-600 w-16 h-16 rounded-full flex items-center justify-center glow-emerald">
                 <span className="text-white font-bold text-lg">4.9★</span>
               </div>
             </div>
@@ -219,7 +267,7 @@ const Testimonials = () => {
                 onClick={() => setActiveTab("all")}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeTab === "all"
-                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/30"
+                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/30 glow-cyan"
                     : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                 }`}
               >
@@ -229,7 +277,7 @@ const Testimonials = () => {
                 onClick={() => setActiveTab("corporate")}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeTab === "corporate"
-                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/30"
+                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/30 glow-cyan"
                     : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                 }`}
               >
@@ -239,7 +287,7 @@ const Testimonials = () => {
                 onClick={() => setActiveTab("student")}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeTab === "student"
-                    ? "bg-gradient-to-r from-amber-500 to-yellow-500 text-white shadow-lg shadow-amber-500/30"
+                    ? "bg-gradient-to-r from-amber-500 to-yellow-500 text-white shadow-lg shadow-amber-500/30 glow-amber"
                     : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                 }`}
               >
@@ -249,41 +297,50 @@ const Testimonials = () => {
           </div>
         </section>
 
-        {/* Video Testimonials */}
+        {/* Futuristic Video Testimonials */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center gap-3 mb-4">
                 <div className="w-12 h-px bg-gradient-to-r from-gray-700 to-cyan-500"></div>
-                <h2 className="text-cyan-400 font-semibold">VIDEO TESTIMONIALS</h2>
+                <h2 className="text-cyan-400 font-semibold tracking-wider">
+                  VIDEO TESTIMONIALS
+                </h2>
                 <div className="w-12 h-px bg-gradient-to-l from-gray-700 to-cyan-500"></div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Real Stories, Real Impact
               </h2>
               <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-                Watch how ALC programs have transformed careers and organizations
+                Watch how ALC programs have transformed careers and
+                organizations
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
               {filteredVideoTestimonials.map((video) => {
                 const videoId = extractYouTubeID(video.url);
+
                 return (
                   <div
                     key={video.id}
-                    className="group relative rounded-xl overflow-hidden bg-gray-800/50 backdrop-blur-sm transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/20"
+                    className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800/50 to-gray-900 backdrop-blur-lg border border-cyan-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/30 hover:scale-[1.02]"
+                    onMouseEnter={() =>
+                      playersRef.current[video.id]?.playVideo()
+                    }
+                    onMouseLeave={() =>
+                      playersRef.current[video.id]?.pauseVideo()
+                    }
                   >
+                    <div className="absolute inset-0 z-0">
+                      <div className="holographic-gradient animate-gradient opacity-30"></div>
+                    </div>
                     <div className="relative pb-[56.25%] h-0">
-                      <iframe
-                        src={`https://www.youtube.com/embed/${videoId}?autoplay=0&mute=1`}
-                        title={video.title}
-                        className="absolute top-0 left-0 w-full h-full object-cover"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div
+                        id={`youtube-player-${video.id}`}
+                        className="absolute top-0 left-0 w-full h-full"
+                      ></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <div className="w-16 h-16 rounded-full bg-cyan-500/80 flex items-center justify-center">
                           <svg
                             className="w-8 h-8 text-white"
@@ -308,7 +365,7 @@ const Testimonials = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="p-4">
+                    <div className="p-5 relative z-10">
                       <div className="flex items-center gap-2 mb-2">
                         <span
                           className={`px-2 py-1 text-xs rounded-full ${
@@ -321,7 +378,7 @@ const Testimonials = () => {
                         </span>
                         <span className="text-xs text-gray-400">3:45 min</span>
                       </div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-1">
+                      <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-1">
                         {video.title}
                       </h3>
                       <p className="text-sm text-blue-100">
@@ -341,14 +398,17 @@ const Testimonials = () => {
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center gap-3 mb-4">
                 <div className="w-12 h-px bg-gradient-to-r from-gray-700 to-amber-500"></div>
-                <h2 className="text-amber-400 font-semibold">TEXT TESTIMONIALS</h2>
+                <h2 className="text-amber-400 font-semibold tracking-wider">
+                  TEXT TESTIMONIALS
+                </h2>
                 <div className="w-12 h-px bg-gradient-to-l from-gray-700 to-amber-500"></div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Voices of Transformation
               </h2>
               <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-                Discover how our participants have unlocked their leadership potential
+                Discover how our participants have unlocked their leadership
+                potential
               </p>
             </div>
 
@@ -356,8 +416,11 @@ const Testimonials = () => {
               {filteredTextTestimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="bg-gray-800/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6 transition-all duration-500 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 relative group"
+                  className="bg-gray-800/40 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 transition-all duration-500 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-[1.02] relative group overflow-hidden"
                 >
+                  <div className="absolute inset-0 z-0">
+                    <div className="holographic-gradient animate-gradient opacity-10"></div>
+                  </div>
                   <div className="absolute top-4 right-4 text-cyan-300 opacity-30 group-hover:opacity-100 transition-opacity">
                     <svg
                       className="w-8 h-8"
@@ -367,7 +430,7 @@ const Testimonials = () => {
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
                   </div>
-                  <div className="flex items-start mb-4">
+                  <div className="flex items-start mb-4 relative z-10">
                     <div className="bg-gradient-to-r from-cyan-500 to-blue-500 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold mr-4">
                       {testimonial.avatar}
                     </div>
@@ -375,11 +438,15 @@ const Testimonials = () => {
                       <h3 className="text-lg font-bold text-white">
                         {testimonial.name}
                       </h3>
-                      <p className="text-cyan-300 text-sm">{testimonial.role}</p>
+                      <p className="text-cyan-300 text-sm">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
-                  <p className="text-blue-100 mb-6">"{testimonial.quote}"</p>
-                  <div className="mt-4 flex text-amber-400">
+                  <p className="text-blue-100 mb-6 relative z-10">
+                    "{testimonial.quote}"
+                  </p>
+                  <div className="mt-4 flex text-amber-400 relative z-10">
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
@@ -400,26 +467,47 @@ const Testimonials = () => {
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8 text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-4">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8 text-center relative overflow-hidden hover:border-cyan-500 transition-all duration-500">
+                <div className="absolute inset-0">
+                  <div className="holographic-gradient animate-gradient opacity-10"></div>
+                </div>
+                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-4 relative z-10">
                   150,000+
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Participants</h3>
-                <p className="text-blue-100">Students and professionals transformed</p>
+                <h3 className="text-xl font-bold text-white mb-2 relative z-10">
+                  Participants
+                </h3>
+                <p className="text-blue-100 relative z-10">
+                  Students and professionals transformed
+                </p>
               </div>
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8 text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent mb-4">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8 text-center relative overflow-hidden hover:border-amber-500 transition-all duration-500">
+                <div className="absolute inset-0">
+                  <div className="holographic-gradient animate-gradient opacity-10"></div>
+                </div>
+                <div className="text-5xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent mb-4 relative z-10">
                   97%
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Success Rate</h3>
-                <p className="text-blue-100">Of participants achieve their goals</p>
+                <h3 className="text-xl font-bold text-white mb-2 relative z-10">
+                  Success Rate
+                </h3>
+                <p className="text-blue-100 relative z-10">
+                  Of participants achieve their goals
+                </p>
               </div>
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8 text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent mb-4">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8 text-center relative overflow-hidden hover:border-emerald-500 transition-all duration-500">
+                <div className="absolute inset-0">
+                  <div className="holographic-gradient animate-gradient opacity-10"></div>
+                </div>
+                <div className="text-5xl font-bold bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent mb-4 relative z-10">
                   4.9/5
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Satisfaction</h3>
-                <p className="text-blue-100">Average rating from participants</p>
+                <h3 className="text-xl font-bold text-white mb-2 relative z-10">
+                  Satisfaction
+                </h3>
+                <p className="text-blue-100 relative z-10">
+                  Average rating from participants
+                </p>
               </div>
             </div>
           </div>
@@ -429,29 +517,35 @@ const Testimonials = () => {
         <section className="py-24 px-4 relative overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="holographic-gradient animate-gradient opacity-30"></div>
-            <div className="absolute inset-0 bg-[url('https://assets-global.website-files.com/5e6c01bb5212506d6c119069/5e6ed103b52125522d7c8d94_5e6c01bb521250d0c21190d1_Group%208.png')] bg-cover bg-center mix-blend-soft-light opacity-10"></div>
+            <div
+              className="absolute inset-0 bg-[url('https://assets-global.website-files.com/5e6c01bb5212506d6c119069/5e6ed103b52125522d7c8d94_5e6c01bb521250d0c21190d1_Group%208.png')] bg-cover bg-center mix-blend-soft-light opacity-10"
+            ></div>
           </div>
           <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <div className="inline-block bg-gradient-to-r from-cyan-600 to-blue-700 rounded-full px-8 py-3 mb-6">
-              <span className="text-white font-medium">Limited Seats Available</span>
+            <div className="inline-block bg-gradient-to-r from-cyan-600 to-blue-700 rounded-full px-8 py-3 mb-6 glow-cyan">
+              <span className="text-white font-medium">
+                Limited Seats Available
+              </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Ready to Transform Your Leadership Journey?
             </h2>
             <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-              Join our community of high-achieving professionals and students who have unlocked their true potential
+              Join our community of high-achieving professionals and students
+              who have unlocked their true potential
             </p>
 
             <div className="flex flex-wrap justify-center gap-6">
               <a
-                href="https://thealcworld.in/courses/"
-                className="inline-block cta-button relative overflow-hidden bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-bold py-4 px-10 rounded-full text-lg transform transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30"
+                href="/courses"
+                className="inline-block cta-button relative overflow-hidden bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-bold py-4 px-10 rounded-full text-lg transform transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/30 glow-amber"
               >
                 <span className="relative z-10">Enroll in Our Programs</span>
+                <span className="absolute top-0 left-0 w-full h-full bg-white opacity-0 hover:opacity-10 transition-opacity"></span>
               </a>
 
               <a
-                href="https://thealcworld.in/about-us/"
+                href="/contact-us"
                 className="inline-block bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 font-bold py-4 px-10 rounded-full text-lg transform transition-all duration-300 hover:scale-105"
               >
                 <span>Schedule a Consultation</span>
@@ -462,6 +556,58 @@ const Testimonials = () => {
       </main>
 
       <Footer />
+
+      {/* Global Styles */}
+      <style jsx global>{`
+        .holographic-gradient {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            125deg,
+            rgba(6, 182, 212, 0.1) 0%,
+            rgba(59, 130, 246, 0.1) 20%,
+            rgba(8, 145, 178, 0.1) 40%,
+            rgba(14, 116, 144, 0.1) 60%,
+            rgba(6, 182, 212, 0.1) 80%,
+            rgba(59, 130, 246, 0.1) 100%
+          );
+          background-size: 400% 400%;
+        }
+
+        .animate-gradient {
+          animation: holographicMove 15s ease infinite;
+        }
+
+        @keyframes holographicMove {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        .glow-cyan {
+          box-shadow: 0 0 15px rgba(6, 182, 212, 0.5),
+            0 0 30px rgba(6, 182, 212, 0.3);
+        }
+
+        .glow-amber {
+          box-shadow: 0 0 15px rgba(245, 158, 11, 0.5),
+            0 0 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .glow-emerald {
+          box-shadow: 0 0 15px rgba(16, 185, 129, 0.5),
+            0 0 30px rgba(16, 185, 129, 0.3);
+        }
+      `}</style>
     </div>
   );
 };

@@ -3,27 +3,41 @@ import Header from './Header';
 import Footer from './Footer';
 
 const Webinars = () => {
-  // Updated seminar data with all 11 seminars
+  // Reordered seminars as requested
   const seminars = [
+    {
+      title: "8 Colors Of Life",
+      image: "https://thealcworld.in/wp-content/uploads/2025/05/11.png",
+      content: "Our Emotions are symbolized by seven colours and their varied shades. Blending these colours of emotions in a prudent and thoughtful proportion can lead us to a brighter state of mind... Almost THE WHITE of peace and positivity.",
+      link: "#",
+      duration: "4 Hours"
+    },
     {
       title: "Graphology",
       image: "https://thealcworld.in/wp-content/uploads/2025/04/3-Graphology-C.png",
       content: "The most progressive science that imparts the skill of analysing handwriting to identify and interpret a person's character. An ideal course for those who want to learn something interesting and also make headway to a flourishing career of being a Graphologist.",
-      link: "#",
+      link: "https://webinar.thealcworld.in/",
       duration: "2 Hours"
     },
     {
       title: "Career Counselling Seminar",
       image: "https://thealcworld.in/wp-content/uploads/2025/05/6-Career-Counseling-C.png",
       content: "Education is a basic and fundamental pillar of everyone's life. Correct education gives you faster success with happiness. Career Guidance Seminar gives you the detailed information about career options to be selected after 10th Grade.",
-      link: "#",
+      link: "https://career.thealcworld.in/",
       duration: "3 Hours"
+    },
+    {
+      title: "Filling The Gaps",
+      image: "https://thealcworld.in/wp-content/uploads/2025/05/7-Filling-Gap-C.png",
+      content: "Who is not being understanding with whom? Parent with the child or child with the parent? Know the hidden facts of your child and channelise your child towards studies, their goals and live a happy family life by FILLING THE GAPS.",
+      link: "#",
+      duration: "2 Hours"
     },
     {
       title: "Time Management",
       image: "https://thealcworld.in/wp-content/uploads/2025/05/5-Time-Management-C.png",
       content: "Complete bag of solutions for time wasters and procrastinators. A 'must attend' workshop for teenagers who are looking for correct methods of time management.",
-      link: "#",
+      link: "https://timemanagement.thealcworld.in/",
       duration: "2 Hours"
     },
     {
@@ -32,13 +46,6 @@ const Webinars = () => {
       content: "An intensive practical workshop for students appearing for board exams. This workshop gives pathways, strategies, and a list of practical DOs and DONTs list for securing good marks.",
       link: "#",
       duration: "2.5 Hours"
-    },
-    {
-      title: "Filling The Gaps",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/7-Filling-Gap-C.png",
-      content: "Who is not being understanding with whom? Parent with the child or child with the parent? Know the hidden facts of your child and channelise your child towards studies, their goals and live a happy family life by FILLING THE GAPS.",
-      link: "#",
-      duration: "2 Hours"
     },
     {
       title: "I Am The Future Me",
@@ -74,13 +81,6 @@ const Webinars = () => {
       content: "A journey that will take you to the Universe of your conscience thus leading you to all the keys to your locks and obstacles of your goals and dreams.",
       link: "#",
       duration: "2.5 Hours"
-    },
-    {
-      title: "8 Colors Of Life",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/11.png",
-      content: "Our Emotions are symbolized by seven colours and their varied shades. Blending these colours of emotions in a prudent and thoughtful proportion can lead us to a brighter state of mind... Almost THE WHITE of peace and positivity.",
-      link: "#",
-      duration: "4 Hours"
     }
   ];
 
@@ -106,11 +106,6 @@ const Webinars = () => {
       
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-        card.querySelector('.glow').style.opacity = '0';
-      });
-      
-      card.addEventListener('mouseenter', () => {
-        card.querySelector('.glow').style.opacity = '0.8';
       });
     });
     
@@ -130,7 +125,7 @@ const Webinars = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white overflow-x-hidden">
       <Header />
       
-      {/* Hero Section with 3D effect */}
+      {/* Hero Section with enhanced design */}
       <section className="relative py-28 px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-cyan-500/10 to-blue-600/10"></div>
@@ -142,10 +137,10 @@ const Webinars = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <div className="inline-block mb-6">
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-tight transform perspective-1000 rotate-y-6">
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-tight">
                 Transformational Seminars
               </h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full transform perspective-1000 rotate-y-6"></div>
+              <div className="h-1 w-32 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
             </div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Unlock your potential with our expert-led seminars designed to transform your life and career
@@ -182,19 +177,19 @@ const Webinars = () => {
         ))}
       </div>
       
-      {/* Seminars Section */}
+      {/* Seminars Section with enhanced UI */}
       <section className="py-20 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 transform perspective-1000 rotate-y-3">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
                 Our Transformational Seminars
               </span>
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
               Discover our range of seminars designed to unlock your potential and transform your life
             </p>
-            <div className="w-24 h-1 bg-cyan-500 mx-auto rounded-full mt-6 transform perspective-1000 rotate-y-3"></div>
+            <div className="w-24 h-1 bg-cyan-500 mx-auto rounded-full mt-6"></div>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -202,26 +197,34 @@ const Webinars = () => {
               <a 
                 href={seminar.link}
                 key={index} 
-                className="seminar-card relative bg-gradient-to-br from-gray-800/30 to-gray-900/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-400/30 transition-all duration-300 shadow-2xl group"
+                className="seminar-card relative bg-gradient-to-br from-gray-800/30 to-gray-900/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-400/50 transition-all duration-300 shadow-2xl group"
                 style={{ 
                   transformStyle: 'preserve-3d',
                   opacity: 0,
                   transform: 'translateY(30px)',
-                  transition: 'opacity 0.5s ease, transform 0.5s ease'
+                  transition: 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
                 }}
               >
                 {/* Glow effect */}
-                <div className="glow absolute inset-0 bg-radial-gradient from-cyan-400/20 to-transparent opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+                <div className="glow absolute inset-0 bg-radial-gradient from-cyan-400/20 to-transparent opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-70"></div>
                 
                 {/* Floating circle effect */}
                 <div className="absolute -top-10 -left-10 w-20 h-20 rounded-full bg-cyan-500/10 blur-xl group-hover:opacity-50 transition-opacity duration-500 animate-float"></div>
+                
+                {/* Holographic border effect */}
+                <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                  <div className="absolute inset-0 border border-transparent group-hover:border-cyan-500/30 transition-all duration-700"></div>
+                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+                </div>
                 
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="flex justify-center mt-8">
                     <div className="relative">
                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow"></div>
-                      <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-500/20 group-hover:border-cyan-400/50 transition-all duration-500 relative group-hover:animate-pulse">
+                      <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-500/20 group-hover:border-cyan-400/50 transition-all duration-500 relative">
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50 z-10"></div>
                         <img 
                           src={seminar.image} 
                           alt={seminar.title} 
@@ -269,6 +272,9 @@ const Webinars = () => {
                     </div>
                   </div>
                 </div>
+                
+                {/* Holographic effect lines */}
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </a>
             ))}
           </div>
@@ -283,7 +289,7 @@ const Webinars = () => {
           <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-500 rounded-full filter blur-[100px] opacity-10 animate-pulse-fast"></div>
         </div>
         
-        <div className="max-w-4xl mx-auto relative z-10 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-12 border border-white/10 transform perspective-1000 rotate-y-3 hover:rotate-y-0 transition-transform duration-700">
+        <div className="max-w-4xl mx-auto relative z-10 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-12 border border-white/10 transition-all duration-700 group hover:border-cyan-500/30 hover:shadow-[0_0_40px_rgba(56,189,248,0.2)]">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -295,17 +301,15 @@ const Webinars = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="relative px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:-translate-y-1 shadow-lg overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:from-cyan-600 group-hover:to-blue-600"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <span className="relative z-10">Book a Seminar Today</span>
-                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-              </button>
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+                
+              </div>
               
-              <button className="relative px-8 py-4 bg-gray-800 border border-cyan-500/30 rounded-lg text-lg font-semibold text-cyan-400 transition-all duration-300 hover:bg-gray-700/50 hover:border-cyan-500/50 group overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <span className="relative z-10">View All Seminars</span>
-              </button>
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+                
+              </div>
             </div>
           </div>
         </div>
@@ -395,23 +399,11 @@ const Webinars = () => {
         }
         
         .seminar-card:hover {
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.2) !important;
         }
         
         h1, h2, h3 {
           text-shadow: 0 0 10px rgba(59, 130, 246, 0.3), 0 0 20px rgba(59, 130, 246, 0.2);
-        }
-        
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        
-        .rotate-y-6 {
-          transform: rotateY(6deg);
-        }
-        
-        .rotate-y-3 {
-          transform: rotateY(3deg);
         }
       `}</style>
     </div>
