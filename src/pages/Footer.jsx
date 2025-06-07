@@ -32,7 +32,7 @@ export default function Footer() {
               className="mb-6"
             >
               <img
-                src="https://thealcworld.in/wp-content/uploads/2025/05/ALC-Logo-1.jpg"
+                src="https://thealcworld.in/store/wp-content/uploads/2025/06/cropped-ALC-Logo.png"
                 alt="ALC Logo"
                 className="h-14 bg-white p-2 rounded-lg"
               />
@@ -67,7 +67,7 @@ export default function Footer() {
               <FooterLink to="/about-us">About Us</FooterLink>
               <FooterLink to="/contact-us">Contact Us</FooterLink>
               <FooterLink to="/courses">Webinars</FooterLink>
-              <FooterLink href="https://thealcworld.in/blogs/">Blogs</FooterLink>
+              <FooterLink href="https://thealcworld.in/store/">Blogs</FooterLink>
             </ul>
           </div>
 
@@ -77,7 +77,7 @@ export default function Footer() {
               Policies
             </h3>
             <ul className="space-y-3">
-              <FooterLink href="https://thealcworld.in/shop/">Shop</FooterLink>
+              <FooterLink href="https://thealcworld.in/store/shop/">Shop</FooterLink>
               <FooterLink to="/terms">Terms & Conditions</FooterLink>
               <FooterLink to="/returns">Returns & Refunds</FooterLink>
               <FooterLink to="/policy">Policy</FooterLink>
@@ -92,7 +92,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <FooterLink to="/gallery">Gallery</FooterLink>
               <FooterLink to="/testomonials">Testimonials</FooterLink>
-              <FooterLink href="https://thealcworld.in/alc-profile/">My Account</FooterLink>
+              <FooterLink href="https://thealcworld.in/store/alc-profile/">My Account</FooterLink>
             </ul>
           </div>
         </div>

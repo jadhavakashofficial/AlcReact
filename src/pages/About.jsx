@@ -222,7 +222,7 @@ const AboutUs = () => {
                 {/* Photo container with proper alignment */}
                 <div className="relative bg-gray-900 p-4 h-80 flex items-center justify-center">
                   <img 
-                    src="https://thealcworld.in/wp-content/uploads/2025/06/IMG_6645.jpg" 
+                    src="https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_6645.jpg" 
                     alt="Nirav Pakai" 
                     className="h-full w-auto object-contain"
                   />
@@ -262,7 +262,7 @@ const AboutUs = () => {
                 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a 
-                    href="https://thealcworld.in/about-us/" 
+                    href="/contact-us" 
                     className="inline-flex items-center bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 relative overflow-hidden neon-ripple"
                   >
                     <span>Learn More About Nirav</span>
@@ -272,7 +272,7 @@ const AboutUs = () => {
                   </a>
                   
                   <a 
-                    href="https://thealcworld.in/courses/" 
+                    href="/courses/" 
                     className="inline-flex items-center bg-transparent border-2 border-cyan-400 text-cyan-400 font-bold py-3 px-6 rounded-full transition-all duration-300 hover:bg-cyan-400/10 relative overflow-hidden neon-ripple"
                   >
                     <span>Book a Session</span>
@@ -343,7 +343,7 @@ const AboutUs = () => {
                   {/* Front Cover */}
                   <div className="absolute w-full h-full backface-hidden rounded-xl overflow-hidden shadow-2xl border-4 border-amber-500/20 glass-effect">
                     <img 
-                      src="https://thealcworld.in/wp-content/uploads/2025/05/book.png" 
+                      src="https://thealcworld.in/store/wp-content/uploads/2025/06/book.png" 
                       alt="The 8 Color of Life" 
                       className="w-full h-full object-cover"
                     />
@@ -408,7 +408,7 @@ const AboutUs = () => {
                 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a 
-                    href="https://thealcworld.in/book/" 
+                    href="https://thealcworld.in/store/product/8cl-the-eighth-colour-of-life/" 
                     className="inline-flex items-center bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/20 relative overflow-hidden neon-ripple"
                   >
                     <span>Get the Book</span>
@@ -418,7 +418,7 @@ const AboutUs = () => {
                   </a>
                   
                   <a 
-                    href="https://thealcworld.in/workshops/" 
+                    href="/courses" 
                     className="inline-flex items-center bg-transparent border-2 border-amber-400 text-amber-400 font-bold py-3 px-6 rounded-full transition-all duration-300 hover:bg-amber-400/10 relative overflow-hidden neon-ripple"
                   >
                     <span>Join Workshop</span>
@@ -583,13 +583,13 @@ const AboutUs = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
-              href="#" 
+              href="/courses" 
               className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-bold rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/30 relative overflow-hidden liquid-morph"
             >
               Enroll Now
             </a>
             <a 
-              href="#" 
+              href="/contact-us" 
               className="px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg hover:bg-cyan-400/10 transition-all duration-300 relative overflow-hidden neon-ripple"
             >
               Schedule Consultation

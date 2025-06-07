@@ -7,77 +7,77 @@ const Webinars = () => {
   const seminars = [
     {
       title: "8 Colors Of Life",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/11.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/1-8CL-C.png",
       content: "Our Emotions are symbolized by seven colours and their varied shades. Blending these colours of emotions in a prudent and thoughtful proportion can lead us to a brighter state of mind... Almost THE WHITE of peace and positivity.",
       link: "#",
       duration: "4 Hours"
     },
     {
       title: "Graphology",
-      image: "https://thealcworld.in/wp-content/uploads/2025/04/3-Graphology-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/3-Graphology-C.png",
       content: "The most progressive science that imparts the skill of analysing handwriting to identify and interpret a person's character. An ideal course for those who want to learn something interesting and also make headway to a flourishing career of being a Graphologist.",
       link: "https://webinar.thealcworld.in/",
       duration: "2 Hours"
     },
     {
       title: "Career Counselling Seminar",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/6-Career-Counseling-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/6-Career-Counseling-C.png",
       content: "Education is a basic and fundamental pillar of everyone's life. Correct education gives you faster success with happiness. Career Guidance Seminar gives you the detailed information about career options to be selected after 10th Grade.",
       link: "https://career.thealcworld.in/",
       duration: "3 Hours"
     },
     {
       title: "Filling The Gaps",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/7-Filling-Gap-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/7-Filling-Gap-C.png",
       content: "Who is not being understanding with whom? Parent with the child or child with the parent? Know the hidden facts of your child and channelise your child towards studies, their goals and live a happy family life by FILLING THE GAPS.",
       link: "#",
       duration: "2 Hours"
     },
     {
       title: "Time Management",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/5-Time-Management-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/5-Time-Management-C.png",
       content: "Complete bag of solutions for time wasters and procrastinators. A 'must attend' workshop for teenagers who are looking for correct methods of time management.",
       link: "https://timemanagement.thealcworld.in/",
       duration: "2 Hours"
     },
     {
       title: "Strategies To Score Good Marks",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/4-Good-Marks-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/4-Good-Marks-C.png",
       content: "An intensive practical workshop for students appearing for board exams. This workshop gives pathways, strategies, and a list of practical DOs and DONTs list for securing good marks.",
       link: "#",
       duration: "2.5 Hours"
     },
     {
       title: "I Am The Future Me",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/2-The-Future-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/2-The-Future-C.png",
       content: "Are you just living a life which is decided by others? Are your dreams not even known by yourself? What are the solutions to your problems in achieving your goals? This seminar will give you the master key to unlock your money flow, good health, a peaceful & successful life.",
       link: "#",
       duration: "3 Hours"
     },
     {
       title: "Focus Fostering",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/8.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/8.png",
       content: "The participant students gain the knowledge of memory tricks and concentration techniques which will faster their academic efficiency and make them a focused person.",
       link: "#",
       duration: "2 Hours"
     },
     {
       title: "Teacher Sharpening Program",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/7.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/7.png",
       content: "This program aims at sharpening skills of the most revered community of society – the teachers.",
       link: "#",
       duration: "2 Hours"
     },
     {
       title: "Business Upgrade Program",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/9.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/8.jpg",
       content: "The participants will be upgraded to a new, refreshed outlook towards their business and also charge them up for a brighter future.",
       link: "#",
       duration: "2.5 Hours"
     },
     {
       title: "Conscience Awakening Journey",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/12-e1748731847703.jpg",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/12-e1749300973217.jpg",
       content: "A journey that will take you to the Universe of your conscience thus leading you to all the keys to your locks and obstacles of your goals and dreams.",
       link: "#",
       duration: "2.5 Hours"

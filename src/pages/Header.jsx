@@ -65,7 +65,7 @@ export default function Header() {
             >
               <Link to="/" aria-label="Home" onClick={closeMobileMenu}>
                 <img 
-                  src="https://thealcworld.in/wp-content/uploads/2025/05/ALC-Logo-1.jpg" 
+                  src="https://thealcworld.in/store/wp-content/uploads/2025/06/ALC-Logo-1.jpg" 
                   alt="ALC Logo"
                   className={`transition-all duration-300 rounded-lg ${
                     scrolled 
@@ -84,7 +84,7 @@ export default function Header() {
               <NavLink to="/testomonials" scrolled={scrolled}>Testimonials</NavLink>
               <NavLink to="/contact-us" scrolled={scrolled}>Contact Us</NavLink>
               <a 
-                href="https://thealcworld.in/shop/" 
+                href="https://thealcworld.in/store/shop/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className={`${scrolled ? 'text-gray-700 hover:text-accent' : 'text-white hover:text-gray-200'} px-3 py-2 font-medium transition-colors`}
@@ -119,7 +119,7 @@ export default function Header() {
                       className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-100"
                     >
                       <a 
-                        href="https://thealcworld.in/alc-profile/" 
+                        href="https://thealcworld.in/store/alc-profile/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors"
@@ -128,7 +128,7 @@ export default function Header() {
                         My Profile
                       </a>
                       <a 
-                        href="https://thealcworld.in/my-account/" 
+                        href="https://thealcworld.in/store/my-account/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors"
@@ -189,7 +189,7 @@ export default function Header() {
               <MobileNavLink to="/testomonials">Testimonials</MobileNavLink>
               <MobileNavLink to="/contact-us">Contact Us</MobileNavLink>
               <a 
-                href="https://thealcworld.in/shop/" 
+                href="https://thealcworld.in/store/shop/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-accent/10 hover:text-accent transition-colors rounded-md"
@@ -223,7 +223,7 @@ export default function Header() {
                       className="pl-4 bg-gray-50/50 rounded-b-md overflow-hidden"
                     >
                       <a 
-                        href="https://thealcworld.in/alc-profile/" 
+                        href="https://thealcworld.in/store/alc-profile/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="block px-3 py-2 text-sm font-medium text-gray-600 hover:bg-accent/10 hover:text-accent transition-colors"
@@ -231,7 +231,7 @@ export default function Header() {
                         My Profile
                       </a>
                       <a 
-                        href="https://thealcworld.in/my-account/" 
+                        href="https://thealcworld.in/store/my-account/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="block px-3 py-2 text-sm font-medium text-gray-600 hover:bg-accent/10 hover:text-accent transition-colors rounded-b-md"

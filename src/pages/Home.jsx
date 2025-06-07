@@ -158,68 +158,68 @@ const HomePage = () => {
   const seminars = [
     {
       title: "8 Colors Of Life",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/11.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/1-8CL-C.png",
       content: "Our Emotions are symbolized by seven colours and their varied shades. Blending these colours of emotions in a prudent and thoughtful proportion can lead us to a brighter state of mind… Almost THE WHITE of peace and positivity.",
       link: "https://thealcworld.in/courses/"
     },
     {
       title: "Graphology",
-      image: "https://thealcworld.in/wp-content/uploads/2025/04/3-Graphology-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/3-Graphology-C.png",
       content: "The most progressive science that imparts the skill of analysing handwriting to identify and interpret a person's character. An ideal course for those who want to learn something interesting and also make headway to a flourishing career of being a Graphologist.",
       link: "https://webinar.thealcworld.in/"
     },
     {
       title: "Career Counselling Seminar",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/6-Career-Counseling-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/6-Career-Counseling-C.png",
       content: "Education is a basic and fundamental pillar of everyone's life. Correct education gives you faster success with happiness. Career Guidance Seminar gives you the detailed information about career options to be selected after 10th Grade.",
       link: "https://thealcworld.in/courses/"
     },
     {
       title: "Filling The Gaps",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/7-Filling-Gap-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/7-Filling-Gap-C.png",
       content: "Who is not being understanding with whom? Parent with the child or child with the parent? Know the hidden facts of your child and channelise your child towards studies, their goals and live a happy family life by FILLING THE GAPS.",
       link: "https://thealcworld.in/courses/"
     },
     // Remaining seminars in random order
     {
       title: "Time Management",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/5-Time-Management-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/5-Time-Management-C.png",
       content: "Complete bag of solutions for time wasters and procrastinators. A 'must attend' workshop for teenagers who are looking for correct methods of time management.",
       link: "https://timemanagement.thealcworld.in/"
     },
     {
       title: "Strategies To Score Good Marks",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/4-Good-Marks-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/4-Good-Marks-C.png",
       content: "An intensive practical workshop for students appearing for board exams. This workshop gives pathways, strategies, and a list of practical DOs and DONTs list for securing good marks.",
       link: "https://thealcworld.in/courses/"
     },
     {
       title: "I Am The Future Me",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/2-The-Future-C.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/2-The-Future-C.png",
       content: "Are you just living a life which is decided by others? Are your dreams not even known by yourself? What are the solutions to your problems in achieving your goals? This seminar will give you the master key to unlock your money flow, good health, a peaceful & successful life.",
       link: "https://thealcworld.in/courses/"
     },
     {
       title: "Focus Fostering",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/8.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/8.png",
       content: "The participant students gain the knowledge of memory tricks and concentration techniques which will faster their academic efficiency and make them a focused person.",
       link: "https://thealcworld.in/courses/"
     },
     {
       title: "Teacher Sharpening Program",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/7.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/7.png",
       content: "This program aims at sharpening skills of the most revered community of society – the teachers.",
       link: "https://thealcworld.in/courses/"
     },
     {
       title: "Business Upgrade Program",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/9.png",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/9.png",
       content: "The participants will be upgraded to a new, refreshed outlook to a new, refreshed outlook towards their business and also charge them up for a brighter future.",
       link: "https://thealcworld.in/courses/"
     },
     {
       title: "Conscience Awakening Journey",
-      image: "https://thealcworld.in/wp-content/uploads/2025/05/12-e1748731847703.jpg",
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/12-e1749300973217.jpg",
       content: "We often neglect our conscience which leads to us into undesired situations. At a point, we realize our mistake and want to trust and follow our conscience. A journey that will take you to the Universe of your conscience thus leading you to all the keys to your locks and obstacles of your goals and dreams.",
       link: "https://thealcworld.in/courses/"
     }
@@ -275,13 +275,13 @@ const HomePage = () => {
       name: "Akash Jadhav",
       role: "Business Owner",
       content: "The leadership training completely transformed my approach to business. Our team productivity increased by 40% in just 3 months!",
-      image: "https://thealcworld.in/wp-content/uploads/2025/06/91995856-3E48-4D39-AEA4-D2D45E0091B8.jpeg"
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/91995856-3E48-4D39-AEA4-D2D45E0091B8.jpeg"
     },
     {
       name: "Araman Salunkhe",
       role: "College Student",
       content: "The career counseling seminar helped me discover my true passion. I'm now pursuing my dream career in psychology!",
-      image: "https://thealcworld.in/wp-content/uploads/2025/06/IMG_5352-scaled.jpg"
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_5352-scaled.jpg"
     },
     {
       name: "Dr. Ritu Savla",
@@ -293,31 +293,31 @@ const HomePage = () => {
       name: "Pratik Shrivastava",
       role: "Youtuber",
       content: "The graphology course opened a new career path for me. I'm now certified and helping people understand themselves better.",
-      image: "https://thealcworld.in/wp-content/uploads/2025/06/IMG_5646.jpg"
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_5646.jpg"
     },
     {
       name: "Avinash",
       role: "Corporate Engineer",
       content: "Nirav's mentorship helped me break through my professional plateau. I've been promoted twice in the last year!",
-      image: "https://thealcworld.in/wp-content/uploads/2025/06/IMG_5650.jpg"
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_5650.jpg"
     },
     {
-      name: "Arun Desai",
+      name: "Nachiket",
       role: "Law Student",
       content: "The transformational leadership program helped me build a cohesive team that exceeded all our quarterly targets.",
-      image: "https://thealcworld.in/wp-content/uploads/2022/12/img-coaching1.png"
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_5671.jpg"
     },
     {
       name: "Rahul Verma",
       role: "Software Engineer",
       content: "The time management seminar completely changed how I approach my work. I've doubled my productivity while reducing stress.",
-      image: "https://thealcworld.in/wp-content/uploads/2022/07/team4.jpg"
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_5670.jpg"
     },
     {
-      name: "Nachiket",
+      name: "Prajwal",
       role: "School Principal",
       content: "Our teachers underwent the sharpening program and the results were phenomenal. Student engagement has increased by 60%.",
-      image: "https://thealcworld.in/wp-content/uploads/2022/12/slider2.png"
+      image: "https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_5669.jpg"
     }
   ];
 
@@ -569,7 +569,7 @@ const HomePage = () => {
                 <div className="absolute -inset-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl blur-xl opacity-70 group-hover:opacity-90 transition-all duration-500"></div>
                 <div className="relative rounded-xl overflow-hidden border-4 border-cyan-500/30 w-full max-w-md h-96 transition-transform duration-500 group-hover:scale-105 group-hover:border-cyan-500/60">
                   <img 
-                    src="https://thealcworld.in/wp-content/uploads/2025/06/IMG_6792-e1748902478913.jpg" 
+                    src="https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_6792-e1749300666514.jpg" 
                     alt="ALC Transformational Seminar" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -925,7 +925,7 @@ const HomePage = () => {
             <div className="founder-image-container lg:w-2/5">
               <div className="rounded-2xl overflow-hidden border-4 border-amber-500/30 shadow-xl transform rotate-3 hover:rotate-0 transition-all duration-500 relative">
                 <img 
-                  src="https://thealcworld.in/wp-content/uploads/2025/05/23-CL-1.jpg" 
+                  src="https://thealcworld.in/store/wp-content/uploads/2025/06/23-CL.jpg" 
                   alt="Nirav Pakai" 
                   className="w-full h-auto object-cover"
                 />
@@ -989,12 +989,12 @@ const HomePage = () => {
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8">
             <img 
-              src="https://thealcworld.in/wp-content/uploads/2025/05/iso9001.png" 
+              src="https://thealcworld.in/store/wp-content/uploads/2025/06/iso9001.png" 
               alt="ISO 9001 Certified" 
               className="h-16 object-contain opacity-90 hover:opacity-100 transition-opacity"
             />
             <img 
-              src="https://thealcworld.in/wp-content/uploads/2025/05/ISO-Certified-Logo.jpg" 
+              src="https://thealcworld.in/store/wp-content/uploads/2025/06/ISO-Certified-Logo.jpg" 
               alt="ISO Certified" 
               className="h-16 object-contain opacity-90 hover:opacity-100 transition-opacity"
             />
