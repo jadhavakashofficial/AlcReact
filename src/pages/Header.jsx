@@ -119,7 +119,7 @@ export default function Header() {
                       className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-100"
                     >
                       <a 
-                        href="https://thealcworld.in/store/alc-profile/" 
+                        href="https://thealcworld.in/store/my-account" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors"
@@ -128,7 +128,7 @@ export default function Header() {
                         My Profile
                       </a>
                       <a 
-                        href="https://thealcworld.in/store/my-account/" 
+                        href="https://thealcworld.in/store/my-account/orders/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors"

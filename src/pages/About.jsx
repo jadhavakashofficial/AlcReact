@@ -9,10 +9,8 @@ const AboutUs = () => {
   const bookRef = useRef(null);
   
   useEffect(() => {
-    // Scroll to top on component mount
     window.scrollTo(0, 0);
     
-    // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -22,7 +20,6 @@ const AboutUs = () => {
       });
     });
     
-    // Add parallax effect on scroll
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const parallaxElements = document.querySelectorAll('[data-parallax]');
@@ -42,15 +39,13 @@ const AboutUs = () => {
     <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 min-h-screen overflow-hidden">
       <Header />
       
-      {/* Hero Section with Glassmorphism and Holographic Effect */}
+      {/* Hero Section with ALC Logo */}
       <div className="relative pt-32 pb-24 px-4 overflow-hidden">
-        {/* Holographic background effect */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 rounded-full filter blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-indigo-500/10 to-blue-600/10 rounded-full filter blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-to-r from-purple-500/10 to-indigo-600/10 rounded-full filter blur-3xl animate-ping"></div>
           <div className="absolute top-1/3 left-2/3 w-64 h-64 bg-gradient-to-r from-amber-500/10 to-yellow-600/10 rounded-full filter blur-3xl animate-pulse"></div>
           
-          {/* Holographic particles */}
           {[...Array(15)].map((_, i) => (
             <div 
               key={i}
@@ -60,14 +55,13 @@ const AboutUs = () => {
                 height: `${Math.random() * 10 + 2}px`,
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                background: `rgba(${Math.random() > 0.5 ? '56, 189, 248' : '96, 165, 250'}, ${Math.random() * 0.4 + 0.1})`,
+                background: `rgba(${Math.random() > 0.5 ? '79, 70, 229' : '6, 182, 212'}, ${Math.random() * 0.4 + 0.1})`,
                 animationDuration: `${Math.random() * 20 + 10}s`,
                 animationDelay: `${Math.random() * 5}s`
               }}
             ></div>
           ))}
           
-          {/* Holographic shimmer effect */}
           <div className="absolute inset-0 bg-[url('https://assets.codepen.io/13471/holographic-gradient.jpg')] bg-cover opacity-10 mix-blend-overlay animate-holographic"></div>
         </div>
         
@@ -75,21 +69,20 @@ const AboutUs = () => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
               <div className="relative transform transition-all duration-700 hover:scale-[1.02] group">
-                {/* Neon glow effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-xl opacity-75 animate-pulse group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-indigo-600 to-cyan-500 rounded-2xl blur-xl opacity-75 animate-pulse group-hover:opacity-100 transition-opacity"></div>
                 
-                {/* Glassmorphism card */}
                 <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-1 overflow-hidden border border-gray-700 group-hover:border-cyan-500/50 transition-all duration-500">
-                  <div className="w-full h-80 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 rounded-xl flex items-center justify-center">
-                    <div className="text-center p-6">
-                      <div className="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xl font-bold px-6 py-3 rounded-full mb-4">
-                        Active Learning Company
+                  <div className="w-full h-80 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 rounded-xl flex flex-col items-center justify-center p-6">
+                    {/* ALC Logo */}
+                    <div className="mb-6 w-40">
+                      <div className="bg-gradient-to-r from-indigo-600 to-cyan-500 text-white px-6 py-3 rounded-lg text-center font-bold text-xl">
+                        ALC
                       </div>
-                      <h2 className="text-3xl font-bold text-white mb-2">Redefining Education</h2>
-                      <p className="text-blue-100 max-w-md mx-auto">
-                        Transforming potential into extraordinary impact through cutting-edge learning strategies
-                      </p>
                     </div>
+                    <h2 className="text-3xl font-bold text-white mb-2 text-center">Redefining Education</h2>
+                    <p className="text-blue-100 text-center max-w-md">
+                      Transforming potential into extraordinary impact through cutting-edge learning strategies
+                    </p>
                   </div>
                 </div>
               </div>
@@ -97,7 +90,7 @@ const AboutUs = () => {
             
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
                   Redefining Success Through Transformative Learning
                 </span>
               </h1>
@@ -108,7 +101,7 @@ const AboutUs = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <a 
                   href="#mission" 
-                  className="px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/30 relative overflow-hidden neon-ripple"
+                  className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/30 relative overflow-hidden neon-ripple"
                 >
                   Our Mission
                 </a>
@@ -124,15 +117,14 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Mission & Vision Section with Enhanced Design */}
+      {/* Mission & Vision Section */}
       <section id="mission" className="py-20 px-4 relative" ref={missionRef}>
-        {/* Background wave effect */}
         <div className="absolute inset-0 bg-[url('https://assets.codepen.io/13471/wave-bg.svg')] bg-cover opacity-10"></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
                 Our Guiding Principles
               </span>
             </h2>
@@ -147,17 +139,16 @@ const AboutUs = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Mission Card with Enhanced Design */}
             <div className="relative group" data-parallax="0.05">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-500 to-cyan-700 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
-              <div className="relative bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 h-full border border-teal-500/30 group-hover:border-teal-400/50 transition-all duration-300">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="relative bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 h-full border border-cyan-500/30 group-hover:border-cyan-400/50 transition-all duration-300">
                 <div className="flex items-start mb-6">
-                  <div className="bg-gradient-to-r from-teal-600 to-cyan-800 p-3 rounded-xl mr-4">
+                  <div className="bg-gradient-to-r from-indigo-600 to-cyan-700 p-3 rounded-xl mr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-teal-300 to-cyan-500 bg-clip-text text-transparent">
+                  <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-300 to-cyan-400 bg-clip-text text-transparent">
                     Our Mission
                   </h2>
                 </div>
@@ -169,17 +160,16 @@ const AboutUs = () => {
               </div>
             </div>
             
-            {/* Vision Card with Enhanced Design */}
             <div className="relative group" data-parallax="0.03">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-700 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
-              <div className="relative bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 h-full border border-indigo-500/30 group-hover:border-indigo-400/50 transition-all duration-300">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-emerald-500 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="relative bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 h-full border border-emerald-500/30 group-hover:border-emerald-400/50 transition-all duration-300">
                 <div className="flex items-start mb-6">
-                  <div className="bg-gradient-to-r from-indigo-600 to-purple-800 p-3 rounded-xl mr-4">
+                  <div className="bg-gradient-to-r from-amber-600 to-emerald-700 p-3 rounded-xl mr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-300 to-purple-500 bg-clip-text text-transparent">
+                  <h2 className="text-3xl font-bold bg-gradient-to-r from-emerald-300 to-emerald-400 bg-clip-text text-transparent">
                     Our Vision
                   </h2>
                 </div>
@@ -194,12 +184,12 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Founder Section with Fixed Photo */}
+      {/* Founder Section */}
       <section id="founder" className="py-20 px-4 relative z-10" ref={founderRef}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
                 Meet Our Founder
               </span>
             </h2>
@@ -215,14 +205,12 @@ const AboutUs = () => {
           
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="founder-image-container lg:w-2/5 flex justify-center" data-parallax="0.04">
-              <div className="rounded-2xl overflow-hidden border-4 border-blue-500/30 shadow-xl transform rotate-3 hover:rotate-0 transition-all duration-500 relative group w-full max-w-sm">
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-2xl blur-xl opacity-70 group-hover:opacity-90 transition-opacity animate-pulse"></div>
+              <div className="rounded-2xl overflow-hidden border-4 border-indigo-500/30 shadow-xl transform rotate-3 hover:rotate-0 transition-all duration-500 relative group w-full max-w-sm">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 rounded-2xl blur-xl opacity-70 group-hover:opacity-90 transition-opacity animate-pulse"></div>
                 
-                {/* Photo container with proper alignment */}
                 <div className="relative bg-gray-900 p-4 h-80 flex items-center justify-center">
                   <img 
-                    src="https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_6645.jpg" 
+                    src="https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_2534-scaled-e1749443475587.jpg" 
                     alt="Nirav Pakai" 
                     className="h-full w-auto object-contain"
                   />
@@ -263,7 +251,7 @@ const AboutUs = () => {
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a 
                     href="/contact-us" 
-                    className="inline-flex items-center bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 relative overflow-hidden neon-ripple"
+                    className="inline-flex items-center bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 relative overflow-hidden neon-ripple"
                   >
                     <span>Learn More About Nirav</span>
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -287,21 +275,18 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Book Section with Continuous 3D Effect */}
+      {/* Enhanced 8 Colors of Life Section */}
       <section id="book" className="py-20 px-4 relative">
-        {/* Augmented Reality Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
-          <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-gradient-to-r from-amber-500/10 to-yellow-600/10 rounded-full filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-amber-400/10 to-yellow-500/10 rounded-full filter blur-3xl animate-ping"></div>
+          <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-gradient-to-r from-amber-500/10 to-emerald-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-amber-400/10 to-emerald-500/10 rounded-full filter blur-3xl animate-ping"></div>
           
-          {/* Grid pattern for AR effect */}
           <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `linear-gradient(rgba(251, 191, 36, 0.3) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(251, 191, 36, 0.3) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(245, 158, 11, 0.3) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(245, 158, 11, 0.3) 1px, transparent 1px)`,
             backgroundSize: '50px 50px'
           }}></div>
           
-          {/* Floating particles */}
           {[...Array(20)].map((_, i) => (
             <div 
               key={i}
@@ -311,7 +296,7 @@ const AboutUs = () => {
                 height: `${Math.random() * 8 + 2}px`,
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                background: `rgba(251, 191, 36, ${Math.random() * 0.3 + 0.1})`,
+                background: `rgba(245, 158, 11, ${Math.random() * 0.3 + 0.1})`,
                 animationDuration: `${Math.random() * 15 + 10}s`,
                 animationDelay: `${Math.random() * 3}s`
               }}
@@ -322,8 +307,8 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500">
-                The 8 Color of Life
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-400">
+                The 8 Colors of Life
               </span>
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto">
@@ -340,7 +325,6 @@ const AboutUs = () => {
             <div className="lg:w-2/5 flex justify-center">
               <div className="book-3d relative w-64 h-80 perspective-1000">
                 <div className="relative w-full h-full preserve-3d transform rotate-y-15">
-                  {/* Front Cover */}
                   <div className="absolute w-full h-full backface-hidden rounded-xl overflow-hidden shadow-2xl border-4 border-amber-500/20 glass-effect">
                     <img 
                       src="https://thealcworld.in/store/wp-content/uploads/2025/06/book.png" 
@@ -348,12 +332,11 @@ const AboutUs = () => {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 text-center">
-                      <h3 className="text-xl font-bold text-amber-300">The 8 Color of Life</h3>
+                      <h3 className="text-xl font-bold text-amber-300">The 8 Colors of Life</h3>
                       <p className="text-amber-100">Nirav Pakai</p>
                     </div>
                   </div>
                   
-                  {/* Back Cover */}
                   <div className="absolute w-full h-full backface-hidden rounded-xl overflow-hidden shadow-2xl border-4 border-amber-500/20 rotate-y-180 glass-effect bg-gradient-to-br from-amber-900/70 via-amber-800/80 to-amber-900/70">
                     <div className="p-6 h-full flex flex-col justify-center">
                       <h3 className="text-xl font-bold text-amber-300 mb-4">Inside the Book</h3>
@@ -382,26 +365,36 @@ const AboutUs = () => {
               
               <div className="space-y-4 text-blue-100">
                 <p>
-                  "The 8 Color of Life" by Nirav Pakai presents a groundbreaking paradigm for understanding and 
+                  "The 8 Colors of Life" by Nirav Pakai presents a groundbreaking paradigm for understanding and 
                   optimizing every dimension of human experience. This transformative work distills decades of 
                   research into a comprehensive framework for holistic success.
                 </p>
-                <p>
-                  The book introduces eight distinct "colors" representing essential life domains:
-                </p>
                 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
-                  {['Purpose', 'Health', 'Relationships', 'Wealth', 'Growth', 'Contribution', 'Spirituality', 'Joy'].map((color, index) => (
-                    <div 
-                      key={index}
-                      className="bg-gradient-to-br from-amber-800/50 to-amber-900/50 border border-amber-700/30 rounded-lg p-3 text-center hover:border-amber-500/50 transition-all"
-                    >
-                      <div className="text-amber-300 font-bold">{color}</div>
-                    </div>
-                  ))}
+                {/* Enhanced Color Visualization */}
+                <div className="mt-8">
+                  <h4 className="text-xl font-bold text-amber-200 mb-4">The 8 Essential Life Colors:</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {[
+                      { name: 'Purpose', color: 'from-purple-500 to-indigo-500' },
+                      { name: 'Health', color: 'from-green-500 to-teal-500' },
+                      { name: 'Relationships', color: 'from-pink-500 to-rose-500' },
+                      { name: 'Wealth', color: 'from-yellow-500 to-amber-500' },
+                      { name: 'Growth', color: 'from-cyan-500 to-blue-500' },
+                      { name: 'Contribution', color: 'from-emerald-500 to-lime-500' },
+                      { name: 'Spirituality', color: 'from-violet-500 to-purple-500' },
+                      { name: 'Joy', color: 'from-orange-500 to-red-500' }
+                    ].map((item, index) => (
+                      <div 
+                        key={index}
+                        className={`bg-gradient-to-br ${item.color} rounded-lg p-4 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-lg`}
+                      >
+                        <div className="text-white font-bold">{item.name}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 
-                <p>
+                <p className="mt-6">
                   The book blends cutting-edge psychology, timeless wisdom, and practical exercises to guide 
                   readers in creating a vibrant, balanced, and purpose-driven life.
                 </p>
@@ -409,7 +402,7 @@ const AboutUs = () => {
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a 
                     href="https://thealcworld.in/store/product/8cl-the-eighth-colour-of-life/" 
-                    className="inline-flex items-center bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/20 relative overflow-hidden neon-ripple"
+                    className="inline-flex items-center bg-gradient-to-r from-amber-500 to-emerald-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/20 relative overflow-hidden neon-ripple"
                   >
                     <span>Get the Book</span>
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -433,12 +426,12 @@ const AboutUs = () => {
         </div>
       </section>
       
-      {/* Core Values with Flip Animation */}
+      {/* Core Values */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
                 Our Core Values
               </span>
             </h2>
@@ -464,7 +457,7 @@ const AboutUs = () => {
                   </svg>
                 ), 
                 desc: "Redefining education as an active, empowering journey",
-                color: "from-cyan-600 to-blue-700"
+                color: "from-indigo-600 to-cyan-500"
               },
               { 
                 title: "Spiritual Alignment", 
@@ -474,7 +467,7 @@ const AboutUs = () => {
                   </svg>
                 ), 
                 desc: "Integrating inner growth with professional development",
-                color: "from-amber-600 to-yellow-600"
+                color: "from-amber-500 to-emerald-500"
               },
               { 
                 title: "Boundary-Breaking", 
@@ -484,7 +477,7 @@ const AboutUs = () => {
                   </svg>
                 ), 
                 desc: "Pushing limits to achieve extraordinary results",
-                color: "from-emerald-600 to-teal-600"
+                color: "from-emerald-500 to-teal-500"
               },
               { 
                 title: "Community Impact", 
@@ -494,7 +487,7 @@ const AboutUs = () => {
                   </svg>
                 ), 
                 desc: "Creating lasting change through collective growth",
-                color: "from-blue-600 to-indigo-700"
+                color: "from-blue-600 to-indigo-600"
               }
             ].map((item, index) => (
               <div 
@@ -502,7 +495,6 @@ const AboutUs = () => {
                 className="h-64 perspective-1000 flip-card"
               >
                 <div className="relative w-full h-full preserve-3d transition-all duration-700 flip-card-inner hover:rotate-y-180">
-                  {/* Front of card */}
                   <div className="absolute inset-0 backface-hidden bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 group">
                     <div className={`text-white mb-4 bg-gradient-to-r ${item.color} p-2 rounded-full w-14 h-14 flex items-center justify-center mx-auto`}>
                       {item.icon}
@@ -511,11 +503,10 @@ const AboutUs = () => {
                     <p className="text-blue-100 text-center">{item.desc}</p>
                   </div>
                   
-                  {/* Back of card with holographic effect */}
                   <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-xl p-6 border border-gray-700 flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-4xl font-bold mb-3">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
                           0{index + 1}
                         </span>
                       </div>
@@ -538,17 +529,17 @@ const AboutUs = () => {
               { 
                 number: "10K+", 
                 label: "Students Trained", 
-                gradient: "from-cyan-400 to-blue-500" 
+                gradient: "from-indigo-400 to-cyan-400" 
               },
               { 
                 number: "200+", 
                 label: "Workshops Conducted", 
-                gradient: "from-amber-400 to-yellow-500" 
+                gradient: "from-amber-400 to-emerald-400" 
               },
               { 
                 number: "15+", 
                 label: "Years of Experience", 
-                gradient: "from-emerald-400 to-teal-500" 
+                gradient: "from-cyan-400 to-emerald-500" 
               }
             ].map((stat, index) => (
               <div 
@@ -568,11 +559,11 @@ const AboutUs = () => {
         </div>
       </section>
       
-      {/* CTA Section with Glow Effect */}
+      {/* CTA Section */}
       <section className="py-20 px-4 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/20 to-blue-900/20 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/20 to-cyan-900/20 z-0"></div>
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <div className="inline-block bg-gradient-to-r from-cyan-600 to-blue-700 text-white px-6 py-2 rounded-full mb-6 text-sm font-bold">
+          <div className="inline-block bg-gradient-to-r from-indigo-600 to-cyan-500 text-white px-6 py-2 rounded-full mb-6 text-sm font-bold">
             Ready to Transform?
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
@@ -584,7 +575,7 @@ const AboutUs = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href="/courses" 
-              className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-bold rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/30 relative overflow-hidden liquid-morph"
+              className="px-8 py-4 bg-gradient-to-r from-amber-500 to-emerald-500 text-black font-bold rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/30 relative overflow-hidden liquid-morph"
             >
               Enroll Now
             </a>
@@ -600,7 +591,6 @@ const AboutUs = () => {
       
       <Footer />
       
-      {/* Custom styles for effects */}
       <style jsx>{`
         @keyframes holographic {
           0% { background-position: 0% 50%; }
@@ -684,7 +674,7 @@ const AboutUs = () => {
           left: -50%;
           width: 200%;
           height: 200%;
-          background: linear-gradient(45deg, rgba(251,191,36,0.8), rgba(245,158,11,0.8), rgba(217,119,6,0.8));
+          background: linear-gradient(45deg, rgba(245,158,11,0.8), rgba(16,185,129,0.8), rgba(217,119,6,0.8));
           z-index: -1;
           transition: transform 0.5s ease;
           transform: translate(-25%, -25%) rotate(0deg);
@@ -705,7 +695,6 @@ const AboutUs = () => {
           }
         }
         
-        /* Book 3D Rotation */
         .book-3d {
           transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
           transform-style: preserve-3d;
@@ -720,7 +709,6 @@ const AboutUs = () => {
           100% { transform: rotateY(360deg); }
         }
         
-        /* Glass effect */
         .glass-card {
           background: rgba(30, 41, 59, 0.3);
           backdrop-filter: blur(10px);
@@ -733,7 +721,6 @@ const AboutUs = () => {
           background: rgba(30, 41, 59, 0.25);
         }
         
-        /* Floating animation */
         @keyframes float {
           0% {
             transform: translateY(0) translateX(0) rotate(0deg);

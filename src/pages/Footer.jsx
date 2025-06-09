@@ -7,15 +7,33 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const [visitorCount, setVisitorCount] = useState(4140);
   
-  // Simulate live visitor count
+  // More realistic visitor counter simulation
   useEffect(() => {
+    // Set initial count based on time of day
+    const now = new Date();
+    const hour = now.getHours();
+    const baseCount = 4140 + Math.floor((hour / 24) * 300);
+    setVisitorCount(baseCount);
+
     const interval = setInterval(() => {
       setVisitorCount(prevCount => {
-        // Simulate realistic growth pattern
-        const increment = Math.floor(Math.random() * 3) + 1;
-        return prevCount + increment;
+        // More realistic visitor pattern:
+        // - Higher probability of increase during daytime
+        // - Small chance of decrease
+        const hourFactor = Math.max(0, 1 - Math.abs(12 - hour) / 12);
+        const changeProbability = 0.7 + (hourFactor * 0.2);
+        
+        if (Math.random() < changeProbability) {
+          // Increase during peak hours
+          const increment = Math.floor(Math.random() * 4) + 1;
+          return prevCount + increment;
+        } else {
+          // Occasional decrease
+          const decrement = Math.random() < 0.3 ? 1 : 0;
+          return Math.max(4100, prevCount - decrement);
+        }
       });
-    }, 8000); // Update every 8 seconds
+    }, 5000); // Update every 5 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -77,10 +95,13 @@ export default function Footer() {
               Policies
             </h3>
             <ul className="space-y-3">
+              {/* Added Shipping Policy link */}
+              <FooterLink to="/shipping">Shipping Policy</FooterLink>
               <FooterLink href="https://thealcworld.in/store/shop/">Shop</FooterLink>
               <FooterLink to="/terms">Terms & Conditions</FooterLink>
               <FooterLink to="/returns">Returns & Refunds</FooterLink>
-              <FooterLink to="/policy">Policy</FooterLink>
+              <FooterLink to="/policy">Privacy Policy</FooterLink>
+              <FooterLink to="/shipping">Shipping Policy</FooterLink>
             </ul>
           </div>
 
@@ -117,7 +138,7 @@ export default function Footer() {
               </p>
             </div>
             
-            {/* Visitor Counter */}
+            {/* Visitor Counter - Fixed with realistic fluctuations */}
             <div className="my-4 md:my-0">
               <div className="flex items-center justify-center bg-gray-800 rounded-full px-4 py-2">
                 <div className="relative w-3 h-3 mr-2">
