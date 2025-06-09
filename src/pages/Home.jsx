@@ -157,10 +157,10 @@ const HomePage = () => {
   // Seminar data - reordered as specified
   const seminars = [
     {
-      title: "8 Colors Of Life",
+      title: "8th Color Of Life",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/1-8CL-C.png",
       content: "Our Emotions are symbolized by seven colours and their varied shades. Blending these colours of emotions in a prudent and thoughtful proportion can lead us to a brighter state of mind… Almost THE WHITE of peace and positivity.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://thealcworld.in/store/product/the-8th-colour-of-life/"
     },
     {
       title: "Graphology",
@@ -172,13 +172,13 @@ const HomePage = () => {
       title: "Career Counselling Seminar",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/6-Career-Counseling-C.png",
       content: "Education is a basic and fundamental pillar of everyone's life. Correct education gives you faster success with happiness. Career Guidance Seminar gives you the detailed information about career options to be selected after 10th Grade.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://career.thealcworld.in/"
     },
     {
       title: "Filling The Gaps",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/7-Filling-Gap-C.png",
       content: "Who is not being understanding with whom? Parent with the child or child with the parent? Know the hidden facts of your child and channelise your child towards studies, their goals and live a happy family life by FILLING THE GAPS.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://thealcworld.in/store/product/filling-the-gaps/"
     },
     // Remaining seminars in random order
     {
@@ -191,37 +191,37 @@ const HomePage = () => {
       title: "Strategies To Score Good Marks",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/4-Good-Marks-C.png",
       content: "An intensive practical workshop for students appearing for board exams. This workshop gives pathways, strategies, and a list of practical DOs and DONTs list for securing good marks.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://thealcworld.in/store/product/strategies-to-score-good-marks/"
     },
     {
       title: "I Am The Future Me",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/2-The-Future-C.png",
       content: "Are you just living a life which is decided by others? Are your dreams not even known by yourself? What are the solutions to your problems in achieving your goals? This seminar will give you the master key to unlock your money flow, good health, a peaceful & successful life.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://thealcworld.in/store/product/im-the-future-me/"
     },
     {
       title: "Focus Fostering",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/8.png",
       content: "The participant students gain the knowledge of memory tricks and concentration techniques which will faster their academic efficiency and make them a focused person.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://thealcworld.in/store/product/focus-fostering/"
     },
     {
       title: "Teacher Sharpening Program",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/7.png",
       content: "This program aims at sharpening skills of the most revered community of society – the teachers.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://thealcworld.in/store/product/teachers-sharpening-program/"
     },
     {
       title: "Business Upgrade Program",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/9.png",
       content: "The participants will be upgraded to a new, refreshed outlook to a new, refreshed outlook towards their business and also charge them up for a brighter future.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://thealcworld.in/store/product/business-upthrust/"
     },
     {
       title: "Conscience Awakening Journey",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/12-e1749300973217.jpg",
       content: "We often neglect our conscience which leads to us into undesired situations. At a point, we realize our mistake and want to trust and follow our conscience. A journey that will take you to the Universe of your conscience thus leading you to all the keys to your locks and obstacles of your goals and dreams.",
-      link: "https://thealcworld.in/courses/"
+      link: "https://thealcworld.in/store/product/conscience-universe/"
     }
   ];
 
