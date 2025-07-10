@@ -6,7 +6,6 @@ import Footer from './Footer';
 const AboutUs = () => {
   const missionRef = useRef(null);
   const founderRef = useRef(null);
-  const bookRef = useRef(null);
   
   useEffect(() => {
     window.scrollTo(0, 0);

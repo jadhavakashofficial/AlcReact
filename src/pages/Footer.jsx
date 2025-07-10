@@ -1,7 +1,7 @@
 // src/pages/Footer.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -45,7 +45,7 @@ export default function Footer() {
           
           {/* Column 1: Logo & Contact */}
           <div>
-            <motion.div 
+              <Motion.div
               whileHover={{ scale: 1.03 }} 
               className="mb-6"
             >
@@ -54,7 +54,7 @@ export default function Footer() {
                 alt="ALC Logo"
                 className="h-14 bg-white p-2 rounded-lg"
               />
-            </motion.div>
+              </Motion.div>
             <p className="text-sm mb-4">
               Transforming education through active learning methodologies and
               innovative teaching approaches.
@@ -85,7 +85,7 @@ export default function Footer() {
               <FooterLink to="/about-us">About Us</FooterLink>
               <FooterLink to="/contact-us">Contact Us</FooterLink>
               <FooterLink to="/courses">Webinars</FooterLink>
-              <FooterLink href="https://thealcworld.in/store/">Blogs</FooterLink>
+              <FooterLink to="/blogs">Blogs</FooterLink>
             </ul>
           </div>
 
@@ -146,7 +146,7 @@ export default function Footer() {
                   <div className="absolute inset-0 bg-green-500 rounded-full"></div>
                 </div>
                 <span className="text-xs text-gray-400 mr-1">Live Visitors:</span>
-                <motion.span 
+                  <Motion.span
                   key={visitorCount}
                   initial={{ y: -10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -154,7 +154,7 @@ export default function Footer() {
                   className="font-medium text-accent"
                 >
                   {visitorCount.toLocaleString()}
-                </motion.span>
+                  </Motion.span>
               </div>
             </div>
 
@@ -195,7 +195,7 @@ const FooterLink = ({ to, href, children }) => (
 );
 
 const SocialIcon = ({ href, icon, label }) => (
-  <motion.a
+  <Motion.a
     whileHover={{ y: -3 }}
     whileTap={{ scale: 0.9 }}
     href={href}
@@ -210,5 +210,5 @@ const SocialIcon = ({ href, icon, label }) => (
     <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
       {label}
     </span>
-  </motion.a>
+  </Motion.a>
 );
