@@ -81,6 +81,7 @@ export default function Header() {
               <NavLink to="/about-us" scrolled={scrolled}>About Us</NavLink>
               <NavLink to="/courses" scrolled={scrolled}>Webinars</NavLink>
               <NavLink to="/gallery" scrolled={scrolled}>Gallery</NavLink>
+              <NavLink to="/blogs" scrolled={scrolled}>Blogs</NavLink>
               <NavLink to="/testomonials" scrolled={scrolled}>Testimonials</NavLink>
               <NavLink to="/contact-us" scrolled={scrolled}>Contact Us</NavLink>
               <a 
@@ -186,6 +187,7 @@ export default function Header() {
               <MobileNavLink to="/about-us">About Us</MobileNavLink>
               <MobileNavLink to="/courses">Webinars</MobileNavLink>
               <MobileNavLink to="/gallery">Gallery</MobileNavLink>
+              <MobileNavLink to="/blogs">Blogs</MobileNavLink>
               <MobileNavLink to="/testomonials">Testimonials</MobileNavLink>
               <MobileNavLink to="/contact-us">Contact Us</MobileNavLink>
               <a 

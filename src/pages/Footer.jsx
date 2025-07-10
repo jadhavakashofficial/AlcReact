@@ -85,7 +85,7 @@ export default function Footer() {
               <FooterLink to="/about-us">About Us</FooterLink>
               <FooterLink to="/contact-us">Contact Us</FooterLink>
               <FooterLink to="/courses">Webinars</FooterLink>
-              <FooterLink href="https://thealcworld.in/store/">Blogs</FooterLink>
+              <FooterLink to="/blogs">Blogs</FooterLink>
             </ul>
           </div>
 

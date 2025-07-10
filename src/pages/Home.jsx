@@ -114,6 +114,25 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Blog Slider Section */}
+      <section className="py-20 px-4 relative z-10 bg-gradient-to-r from-gray-800/20 to-gray-900/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500">
+                Latest Blogs
+              </span>
+            </h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+              Insights and updates from Active Learning Company
+            </p>
+            <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full mt-6"></div>
+          </div>
+
+          <BlogSlider />
+        </div>
+      </section>
       
       {/* Moving Social Lower Third */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-gray-900 to-black py-3 overflow-hidden">
@@ -1262,3 +1281,83 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+const BlogSlider = () => {
+  const [posts, setPosts] = useState([]);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch(
+          'https://thealcworld.in/store/wp-json/wp/v2/posts?_embed&per_page=5'
+        );
+        if (res.ok) {
+          const data = await res.json();
+          setPosts(data);
+        }
+      } catch (err) {
+        console.error('Failed to load blog posts', err);
+      }
+    };
+    fetchPosts();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((p) => (p + 1) % posts.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [posts.length]);
+
+  if (!posts.length) return null;
+
+  return (
+    <div className="relative overflow-hidden">
+      <div
+        className="flex transition-transform duration-700"
+        style={{ transform: `translateX(-${current * 100}%)` }}
+      >
+        {posts.map((post) => {
+          const image =
+            post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+          return (
+            <a
+              key={post.id}
+              href={`/blog/${post.id}`}
+              className="w-full flex-shrink-0 px-3"
+            >
+              <div className="bg-white rounded-xl shadow overflow-hidden">
+                {image && (
+                  <img
+                    src={image}
+                    alt=""
+                    className="h-56 w-full object-cover"
+                  />
+                )}
+                <div className="p-4">
+                  <h3
+                    className="font-semibold mb-2"
+                    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                  />
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <div className="flex justify-center mt-4">
+        {posts.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrent(idx)}
+            className={`w-3 h-3 mx-1 rounded-full ${
+              current === idx ? 'bg-amber-500' : 'bg-gray-500'
+            }`}
+          ></button>
+        ))}
+      </div>
+    </div>
+  );
+};
