@@ -7,6 +7,8 @@ import Gallery from './pages/Gallery';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Blogs from './pages/Blogs';
+import Blog from './pages/Blog';
 import TermsAndConditions from './pages/termsandconditions';
 import Returns from './pages/returns';
 import Policy from './pages/Policy';
@@ -125,6 +127,8 @@ function App() {
         <Route path="/testomonials" element={<Testimonials />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blog/:id" element={<Blog />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/returns" element={<Returns />} />
         <Route path="/policy" element={<Policy />} />
