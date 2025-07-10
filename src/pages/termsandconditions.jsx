@@ -83,7 +83,7 @@ const TermsAndConditions = () => {
                 },
                 {
                   title: "5. Payments and Refunds",
-                  content: "If you purchase access to a webinar or any premium content: All payments are securely processed via Razorpay; Prices are listed in INR and subject to change; Once payment is completed, you will receive confirmation via email. Refunds: Refunds are not guaranteed and are handled on a case-by-case basis. No refunds will be provided for missed webinars or late cancellations. To request a refund, email niravpakai@gmail.com within 48 hours of the transaction."
+                  content: "If you purchase access to a webinar or any premium content: All payments are securely processed via Razorpay; Prices are listed in INR and subject to change; Once payment is completed, you will receive confirmation via email. Refunds: Refunds are not guaranteed and are handled on a case-by-case basis. No refunds will be provided for missed webinars or late cancellations. To request a refund, email info@thealcworld.in within 48 hours of the transaction."
                 },
                 {
                   title: "6. Content Ownership",
@@ -95,7 +95,7 @@ const TermsAndConditions = () => {
                 },
                 {
                   title: "8. Privacy and Data Collection",
-                  content: "We collect and use your personal data in accordance with our Privacy Policy. Key points: We collect data via forms, cookies, and analytics tools (like Google Analytics); We do not sell or rent your personal information; We may send updates or promotional content via email; You may request deletion of your data at any time by contacting niravpakai@gmail.com"
+                  content: "We collect and use your personal data in accordance with our Privacy Policy. Key points: We collect data via forms, cookies, and analytics tools (like Google Analytics); We do not sell or rent your personal information; We may send updates or promotional content via email; You may request deletion of your data at any time by contacting  info@thealcworld.in"
                 },
                 {
                   title: "9. Cookies & Tracking Technologies",
@@ -127,7 +127,7 @@ const TermsAndConditions = () => {
                 },
                 {
                   title: "16. Contact Information",
-                  content: "For any questions, concerns, or feedback regarding these Terms, you may contact us at: 📧 Email: niravpakai@gmail.com 🌐 Website: https://www.thealcworld.in"
+                  content: "For any questions, concerns, or feedback regarding these Terms, you may contact us at: 📧 Email:  info@thealcworld.in 🌐 Website: https://www.thealcworld.in"
                 }
               ].map((section, index) => (
                 <div key={index} className="group">

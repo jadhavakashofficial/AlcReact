@@ -56,8 +56,8 @@ const ContactUs = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
               {[
                 { value: "24/7", label: "Support", gradient: "from-cyan-600 to-blue-700" },
-                { value: "500+", label: "Students Helped", gradient: "from-amber-600 to-yellow-600" },
-                { value: "50+", label: "Corporate Clients", gradient: "from-emerald-600 to-teal-600" }
+                { value: "47,643", label: "Students Developed and counting...", gradient: "from-amber-600 to-yellow-600" },
+                { value: "38", label: "Active companies association", gradient: "from-emerald-600 to-teal-600" }
               ].map((stat, index) => (
                 <div key={index} className={`bg-gradient-to-r ${stat.gradient} rounded-2xl p-1`}>
                   <div className="bg-gray-900 rounded-xl p-5 flex flex-col items-center">

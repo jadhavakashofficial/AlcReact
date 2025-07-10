@@ -39,7 +39,7 @@ const AboutUs = () => {
     <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 min-h-screen overflow-hidden">
       <Header />
       
-      {/* Hero Section with ALC Logo */}
+      {/* Enhanced Hero Section with Full-width Image */}
       <div className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-indigo-500/10 to-blue-600/10 rounded-full filter blur-3xl animate-pulse"></div>
@@ -66,29 +66,8 @@ const AboutUs = () => {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
-              <div className="relative transform transition-all duration-700 hover:scale-[1.02] group">
-                <div className="absolute -inset-4 bg-gradient-to-r from-indigo-600 to-cyan-500 rounded-2xl blur-xl opacity-75 animate-pulse group-hover:opacity-100 transition-opacity"></div>
-                
-                <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-1 overflow-hidden border border-gray-700 group-hover:border-cyan-500/50 transition-all duration-500">
-                  <div className="w-full h-80 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 rounded-xl flex flex-col items-center justify-center p-6">
-                    {/* ALC Logo */}
-                    <div className="mb-6 w-40">
-                      <div className="bg-gradient-to-r from-indigo-600 to-cyan-500 text-white px-6 py-3 rounded-lg text-center font-bold text-xl">
-                        ALC
-                      </div>
-                    </div>
-                    <h2 className="text-3xl font-bold text-white mb-2 text-center">Redefining Education</h2>
-                    <p className="text-blue-100 text-center max-w-md">
-                      Transforming potential into extraordinary impact through cutting-edge learning strategies
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="md:w-1/2 text-center md:text-left">
+          <div className="flex flex-col-reverse md:flex-row items-center gap-12">
+            <div className="md:w-1/2 mt-10 md:mt-0">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
                   Redefining Success Through Transformative Learning
@@ -98,7 +77,7 @@ const AboutUs = () => {
                 We empower boundary-breakers to transform potential into extraordinary impact through 
                 cutting-edge strategies and spiritual alignment.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="#mission" 
                   className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/30 relative overflow-hidden neon-ripple"
@@ -111,6 +90,22 @@ const AboutUs = () => {
                 >
                   Contact Us
                 </a>
+              </div>
+            </div>
+            
+            <div className="md:w-1/2">
+              <div className="relative transform transition-all duration-700 hover:scale-[1.02] group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-indigo-600 to-cyan-500 rounded-2xl blur-xl opacity-75 animate-pulse group-hover:opacity-100 transition-opacity"></div>
+                
+                <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-1 overflow-hidden border border-gray-700 group-hover:border-cyan-500/50 transition-all duration-500">
+                  <div className="w-full h-80 rounded-xl overflow-hidden">
+                    <img 
+                      src="https://thealcworld.in/store/wp-content/uploads/2025/06/f5648e55-405c-49ce-8936-c2a1a3afaa5a.jpeg" 
+                      alt="ALC Transformative Learning" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -184,7 +179,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Founder Section */}
+      {/* Founder Section - Fixed for mobile */}
       <section id="founder" className="py-20 px-4 relative z-10" ref={founderRef}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -203,12 +198,12 @@ const AboutUs = () => {
             </div>
           </div>
           
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="founder-image-container lg:w-2/5 flex justify-center" data-parallax="0.04">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="w-full lg:w-2/5 flex justify-center mb-8 lg:mb-0" data-parallax="0.04">
               <div className="rounded-2xl overflow-hidden border-4 border-indigo-500/30 shadow-xl transform rotate-3 hover:rotate-0 transition-all duration-500 relative group w-full max-w-sm">
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 rounded-2xl blur-xl opacity-70 group-hover:opacity-90 transition-opacity animate-pulse"></div>
                 
-                <div className="relative bg-gray-900 p-4 h-80 flex items-center justify-center">
+                <div className="relative bg-gray-900 p-4 h-60 md:h-80 flex items-center justify-center">
                   <img 
                     src="https://thealcworld.in/store/wp-content/uploads/2025/06/IMG_2534-scaled-e1749443475587.jpg" 
                     alt="Nirav Pakai" 
@@ -222,8 +217,8 @@ const AboutUs = () => {
               </div>
             </div>
             
-            <div className="lg:w-3/5">
-              <h3 className="text-3xl font-bold text-cyan-300 mb-4">Transformational Mentor, Graphology Expert & Lifelong Educator</h3>
+            <div className="w-full lg:w-3/5">
+              <h3 className="text-2xl md:text-3xl font-bold text-cyan-300 mb-4">Transformational Mentor, Graphology Expert & Lifelong Educator</h3>
               
               <div className="space-y-4 text-blue-100">
                 <p>
@@ -244,7 +239,7 @@ const AboutUs = () => {
                   <li><span className="text-blue-100">A relentless explorer of human potential</span></li>
                 </ul>
                 <p>
-                  His debut book, <span className="text-cyan-300 font-medium">The 8 Color of Life</span>, distills decades of transformative lessons into a powerful
+                  <span className="text-cyan-300 font-medium">8CL - The Eighth Colour Of Life</span>, distills decades of transformative lessons into a powerful
                   playbook designed to spark 1 Billion Smiles.
                 </p>
                 
@@ -260,7 +255,7 @@ const AboutUs = () => {
                   </a>
                   
                   <a 
-                    href="/courses/" 
+                    href="/courses" 
                     className="inline-flex items-center bg-transparent border-2 border-cyan-400 text-cyan-400 font-bold py-3 px-6 rounded-full transition-all duration-300 hover:bg-cyan-400/10 relative overflow-hidden neon-ripple"
                   >
                     <span>Book a Session</span>
@@ -308,7 +303,7 @@ const AboutUs = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-400">
-                The 8 Colors of Life
+                The Eighth Colour Of Life
               </span>
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto">
@@ -321,25 +316,24 @@ const AboutUs = () => {
             </div>
           </div>
           
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-2/5 flex justify-center">
-              <div className="book-3d relative w-64 h-80 perspective-1000">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            <div className="w-full lg:w-2/5 flex justify-center mb-8 lg:mb-0">
+              <div className="book-3d relative w-48 md:w-64 h-60 md:h-80 perspective-1000">
                 <div className="relative w-full h-full preserve-3d transform rotate-y-15">
                   <div className="absolute w-full h-full backface-hidden rounded-xl overflow-hidden shadow-2xl border-4 border-amber-500/20 glass-effect">
                     <img 
-                      src="https://thealcworld.in/store/wp-content/uploads/2025/06/book.png" 
-                      alt="The 8 Color of Life" 
+                      src="https://thealcworld.in/store/wp-content/uploads/2025/06/Screenshot-2025-06-09-at-10.13.36 AM.png" 
+                      alt="The Eighth Colour Of Life" 
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 text-center">
-                      <h3 className="text-xl font-bold text-amber-300">The 8 Colors of Life</h3>
-                      <p className="text-amber-100">Nirav Pakai</p>
+                  
                     </div>
                   </div>
                   
                   <div className="absolute w-full h-full backface-hidden rounded-xl overflow-hidden shadow-2xl border-4 border-amber-500/20 rotate-y-180 glass-effect bg-gradient-to-br from-amber-900/70 via-amber-800/80 to-amber-900/70">
                     <div className="p-6 h-full flex flex-col justify-center">
-                      <h3 className="text-xl font-bold text-amber-300 mb-4">Inside the Book</h3>
+                      <h3 className="text-xl font-bold text-amber-300 mb-4"></h3>
                       <ul className="space-y-2 text-amber-100">
                         <li className="flex items-start">
                           <span className="text-amber-400 mr-2">•</span>
@@ -350,8 +344,8 @@ const AboutUs = () => {
                           <span>Practical tools for transformation</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="text-amber-400 mr-2">•</span>
-                          <span>Strategies for holistic success</span>
+                          
+                         
                         </li>
                       </ul>
                     </div>
@@ -360,19 +354,40 @@ const AboutUs = () => {
               </div>
             </div>
             
-            <div className="lg:w-3/5 glass-card bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-amber-500/30 rounded-2xl p-8">
-              <h3 className="text-3xl font-bold text-amber-300 mb-4">A Revolutionary Framework for Personal Transformation</h3>
+            <div className="w-full lg:w-3/5 glass-card bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-amber-500/30 rounded-2xl p-6 md:p-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-amber-300 mb-4">A Revolutionary Framework for Personal Transformation</h3>
               
               <div className="space-y-4 text-blue-100">
                 <p>
-                  "The 8 Colors of Life" by Nirav Pakai presents a groundbreaking paradigm for understanding and 
-                  optimizing every dimension of human experience. This transformative work distills decades of 
-                  research into a comprehensive framework for holistic success.
+                  "Discover the profound connection between science and spirituality in this transformative workshop. Just as the seven colours blend into pure white light when in harmony, our emotions—when balanced with wisdom—create a life of positivity, peace, and purpose."
+                </p>
+                <p>
+                  In this workshop, you'll explore:
+                </p>
+                <ul className="ml-6 space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-amber-400 mr-2">✨</span>
+                    <span>The Science of Emotions – How thoughts and feelings shape your reality</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-amber-400 mr-2">✨</span>
+                    <span>The Art of Emotional Harmony – Techniques to align your inner "colours" for clarity and joy</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-amber-400 mr-2">✨</span>
+                    <span>The 8th Colour – Your Path to Wholeness – Uncover the missing key to inner transformation</span>
+                  </li>
+                </ul>
+                <p>
+                  Whether you seek resilience, self-mastery, or deeper happiness, this session will guide you to spin the disc of life with intention—turning chaos into calm and darkness into light.
+                </p>
+                <p>
+                  "When emotions move with wisdom, they paint a life of peace."
                 </p>
                 
                 {/* Enhanced Color Visualization */}
                 <div className="mt-8">
-                  <h4 className="text-xl font-bold text-amber-200 mb-4">The 8 Essential Life Colors:</h4>
+                  <h4 className="text-xl font-bold text-amber-200 mb-4">Transformational Markers:</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[
                       { name: 'Purpose', color: 'from-purple-500 to-indigo-500' },
@@ -527,18 +542,18 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
-                number: "10K+", 
-                label: "Students Trained", 
+                number: "47,643", 
+                label: " Students Developed...", 
                 gradient: "from-indigo-400 to-cyan-400" 
               },
               { 
-                number: "200+", 
-                label: "Workshops Conducted", 
+                number: "Since 2004", 
+                label: " Decoding Potential and Leading Towards Leadership", 
                 gradient: "from-amber-400 to-emerald-400" 
               },
               { 
-                number: "15+", 
-                label: "Years of Experience", 
+                number: "461", 
+                label: "Seminars & Workshops Conducted & Counting", 
                 gradient: "from-cyan-400 to-emerald-500" 
               }
             ].map((stat, index) => (
@@ -552,7 +567,7 @@ const AboutUs = () => {
                   </span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{stat.label}</h3>
-                <p className="text-blue-100">and counting</p>
+                <p className="text-blue-100"></p>
               </div>
             ))}
           </div>

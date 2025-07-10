@@ -29,7 +29,7 @@ const socialLinks = [
   },
   {
     id: 'linkedin',
-    href: 'https://www.linkedin.com/in/classictechak/',
+    href: 'https://www.linkedin.com/in/nirav-pakai-974170181/',
     title: 'LinkedIn',
     icon: <FaLinkedin className="w-4 h-4" />,
     bg: 'from-blue-500 to-indigo-700'

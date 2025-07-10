@@ -6,7 +6,7 @@ const Webinars = () => {
   // Reordered seminars as requested
   const seminars = [
     {
-      title: "8 Colors Of Life",
+      title: "The 8th Colour Of Life",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/1-8CL-C.png",
       content: "Our Emotions are symbolized by seven colours and their varied shades. Blending these colours of emotions in a prudent and thoughtful proportion can lead us to a brighter state of mind... Almost THE WHITE of peace and positivity.",
       link: "https://thealcworld.in/store/product/the-8th-colour-of-life/",

@@ -209,7 +209,7 @@ const RefundPolicy = () => {
                     borderColor: '#06b6d4'
                   }}>
                     <p className="text-cyan-300">
-                      In most cases, recordings will be shared post-session (if explicitly mentioned at the time of purchase). You can email <span className="font-medium">niravpakai@gmail.com</span> within 24 hours of the missed session, and we'll try our best to provide access to replays.
+                      In most cases, recordings will be shared post-session (if explicitly mentioned at the time of purchase). You can email <span className="font-medium"> info@thealcworld.in</span> within 24 hours of the missed session, and we'll try our best to provide access to replays.
                     </p>
                   </div>
                 </div>
@@ -234,7 +234,7 @@ const RefundPolicy = () => {
                     </p>
                     
                     <ol className="text-blue-100 list-decimal list-inside space-y-2 pl-4">
-                      <li>Send proof of transaction to niravpakai@gmail.com</li>
+                      <li>Send proof of transaction to info@thealcworld.in</li>
                       <li>We will verify within 3-5 business days</li>
                       <li>If confirmed, a full refund of duplicate amount will be processed</li>
                     </ol>
@@ -292,7 +292,7 @@ const RefundPolicy = () => {
                         <i className="fas fa-envelope text-xl"></i>
                       </div>
                       <h4 className="text-white font-medium mb-1">Email Feedback</h4>
-                      <p className="text-blue-100 text-sm">Share constructive feedback at niravpakai@gmail.com</p>
+                      <p className="text-blue-100 text-sm">Share constructive feedback at  info@thealcworld.in</p>
                     </div>
                     
                     <div className="flex-1 min-w-[200px] p-4 rounded-lg" style={{ background: 'rgba(31, 41, 55, 0.3)' }}>
@@ -336,7 +336,7 @@ const RefundPolicy = () => {
                       <i className="fas fa-envelope text-cyan-300 text-xl"></i>
                     </div>
                     <p className="text-white font-medium">Email</p>
-                    <a href="mailto:niravpakai@gmail.com" className="text-cyan-300 hover:underline">niravpakai@gmail.com</a>
+                    <a href="mailto: info@thealcworld.in" className="text-cyan-300 hover:underline"> info@thealcworld.inm</a>
                   </div>
                   
                   <div className="text-center">

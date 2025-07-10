@@ -58,7 +58,7 @@ const PrivacyPolicy = () => {
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-5 mt-6">
                 <p className="text-blue-100">
                   <span className="font-bold text-emerald-300">Website:</span> https://www.thealcworld.in<br />
-                  <span className="font-bold text-emerald-300">Contact:</span> niravpakai@gmail.com
+                  <span className="font-bold text-emerald-300">Contact:</span>  info@thealcworld.in
                 </p>
               </div>
             </div>
@@ -100,7 +100,7 @@ const PrivacyPolicy = () => {
                 },
                 {
                   title: "9. Data Retention and User Rights",
-                  content: "We retain your data for as long as necessary to provide our services and comply with legal obligations.\n\nYou have the right to:\n- Request a copy of your data\n- Ask us to update or correct inaccurate information\n- Request permanent deletion of your data from our systems\n\nTo exercise any of these rights, please email us at niravpakai@gmail.com."
+                  content: "We retain your data for as long as necessary to provide our services and comply with legal obligations.\n\nYou have the right to:\n- Request a copy of your data\n- Ask us to update or correct inaccurate information\n- Request permanent deletion of your data from our systems\n\nTo exercise any of these rights, please email us at  info@thealcworld.in."
                 },
                 {
                   title: "10. Security of Your Information",
@@ -116,7 +116,7 @@ const PrivacyPolicy = () => {
                 },
                 {
                   title: "13. Contact Us",
-                  content: "For questions or concerns regarding this Privacy Policy, please contact:\n\n📧 Email: niravpakai@gmail.com\n🌐 Website: https://www.thealcworld.in\n\nBy using our website, you consent to this Privacy Policy."
+                  content: "For questions or concerns regarding this Privacy Policy, please contact:\n\n📧 Email:  info@thealcworld.in\n🌐 Website: https://www.thealcworld.in\n\nBy using our website, you consent to this Privacy Policy."
                 }
               ].map((section, index) => (
                 <div key={index} className="group">

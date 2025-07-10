@@ -113,7 +113,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <FooterLink to="/gallery">Gallery</FooterLink>
               <FooterLink to="/testomonials">Testimonials</FooterLink>
-              <FooterLink href="https://thealcworld.in/store/alc-profile/">My Account</FooterLink>
+              <FooterLink href="https://thealcworld.in/store/my-account/">My Account</FooterLink>
             </ul>
           </div>
         </div>

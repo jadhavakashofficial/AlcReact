@@ -23,7 +23,7 @@ const Home = () => {
     },
     {
       id: 'linkedin',
-      href: 'https://www.linkedin.com/in/classictechak/',
+      href: 'https://www.linkedin.com/in/nirav-pakai-974170181/',
       title: 'LinkedIn',
       icon: <FaLinkedin className="text-xl md:text-2xl" />,
       bg: 'bg-gradient-to-br from-blue-500 to-indigo-700'
@@ -157,7 +157,7 @@ const HomePage = () => {
   // Seminar data - reordered as specified
   const seminars = [
     {
-      title: "8th Color Of Life",
+      title: "The 8th Colour Of Life",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/1-8CL-C.png",
       content: "Our Emotions are symbolized by seven colours and their varied shades. Blending these colours of emotions in a prudent and thoughtful proportion can lead us to a brighter state of mind… Almost THE WHITE of peace and positivity.",
       link: "https://thealcworld.in/store/product/the-8th-colour-of-life/"
@@ -169,7 +169,7 @@ const HomePage = () => {
       link: "https://webinar.thealcworld.in/"
     },
     {
-      title: "Career Counselling Seminar",
+      title: "Career Pathway",
       image: "https://thealcworld.in/store/wp-content/uploads/2025/06/6-Career-Counseling-C.png",
       content: "Education is a basic and fundamental pillar of everyone's life. Correct education gives you faster success with happiness. Career Guidance Seminar gives you the detailed information about career options to be selected after 10th Grade.",
       link: "https://career.thealcworld.in/"
@@ -708,7 +708,7 @@ const HomePage = () => {
                 <p className="text-gray-300 text-center">{category.description}</p>
                 <div className="mt-6 text-center">
                   <a 
-                    href="/courses/" 
+                    href="/courses" 
                     className="inline-block bg-gradient-to-r from-cyan-600 to-blue-700 text-white text-sm font-medium py-2 px-4 rounded-full transition-all duration-300 hover:opacity-90"
                   >
                     Explore Programs
@@ -951,7 +951,7 @@ const HomePage = () => {
                   A sought-after speaker and workshop conductor, Nirav has transformed the lives of over 150,000 students and professionals through his innovative programs. His insights have reshaped mindsets across industries, proving that true success begins with intentional learning and self-discovery.
                 </p>
                 <p>
-                  Beyond the stage, Nirav wears multiple hats with passion: A dedicated educator since 2004, a certified Graphologist since 2010, and a relentless explorer of human potential. His upcoming book, <span className="text-amber-300 font-medium">The 8 Colors of Life</span>, distills decades of transformative lessons into a powerful playbook designed to spark 1 Billion Smiles.
+                  Beyond the stage, Nirav wears multiple hats with passion: A dedicated educator since 2004, a certified Graphologist since 2010, and a relentless explorer of human potential. His book, <span className="text-amber-300 font-medium">8CL - The Eighth Colour Of Life</span>, distills decades of transformative lessons into a powerful playbook designed to spark 1 Billion Smiles.
                 </p>
                 
                 <div className="mt-8 flex flex-wrap gap-4">
