@@ -27,12 +27,12 @@ export default function Blogs() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Header />
-      <main className="flex-grow max-w-5xl mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-8 text-center">Blogs</h1>
+      <main className="flex-grow pt-32 pb-20 max-w-6xl mx-auto px-4">
+        <h1 className="text-3xl font-bold mb-8 text-center text-gray-100">Blogs</h1>
         {loading ? (
-          <p className="text-center">Loading...</p>
+          <p className="text-center text-gray-200">Loading...</p>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => {
@@ -42,19 +42,19 @@ export default function Blogs() {
                 <Link
                   key={post.id}
                   to={`/blog/${post.id}`}
-                  className="block bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+                  className="block rounded-2xl bg-gray-800/60 backdrop-blur-md border border-gray-700 hover:shadow-lg overflow-hidden transition"
                 >
                   {image && (
                     <img
                       src={image}
                       alt=""
-                      className="h-48 w-full object-cover"
+                      className="h-48 w-full object-cover rounded-t-2xl"
                     />
                   )}
                   <div className="p-4">
-                    <h2 className="font-semibold text-lg mb-2" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                    <h2 className="font-semibold text-lg mb-2 text-gray-100" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
                     <div
-                      className="text-sm text-gray-600"
+                      className="text-sm text-gray-400"
                       dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                     />
                   </div>

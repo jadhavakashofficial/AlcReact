@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import YouTube from 'react-youtube';
 import { FaWhatsapp, FaLinkedin, FaInstagram, FaYoutube, FaFacebookF, FaBrain, FaAtom } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -115,30 +116,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Blog Slider Section */}
-      <section className="py-20 px-4 relative z-10 bg-gradient-to-r from-gray-800/20 to-gray-900/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500">
-                Latest Blogs
-              </span>
-            </h2>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              Insights and updates from Active Learning Company
-            </p>
-            <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full mt-6"></div>
-          </div>
-
-          <BlogSlider />
-        </div>
-      </section>
       
       {/* Moving Social Lower Third */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-gray-900 to-black py-3 overflow-hidden">
         <div className="marquee-container flex">
           <div className="marquee-content flex space-x-8 animate-marquee whitespace-nowrap">
-            {socialLinks.map((link, index) => (
+            {socialLinks.map((link) => (
               <a
                 key={link.id}
                 href={link.href}
@@ -353,13 +336,6 @@ const HomePage = () => {
   ];
 
   // Statistics data with icons
-  const statistics = [
-    { value: 150000, label: "Students Transformed", icon: "👨‍🎓", plus: true },
-    { value: 200, label: "Corporate Clients", icon: "🏢", plus: true },
-    { value: 270, label: "Workshops", icon: "📅", plus: true },
-    { value: 99, label: "Satisfaction Rate", icon: "⭐", percent: true }
-  ];
-
   // Who can enroll data
   const enrollCategories = [
     {
@@ -392,7 +368,6 @@ const HomePage = () => {
   const [currentSet, setCurrentSet] = useState(0);
   const [hoveredVideo, setHoveredVideo] = useState(null);
   const [isBookRotating, setIsBookRotating] = useState(true);
-  const testimonialRef = useRef(null);
   const bookRef = useRef(null);
   const testimonialsPerPage = 4;
   const totalSets = Math.ceil(testimonials.length / testimonialsPerPage);
@@ -998,9 +973,28 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>
-      
-      {/* Trust Badges */}
+        </section>
+
+        {/* Blog Slider Section */}
+        <section className="py-20 px-4 relative z-10 bg-gradient-to-r from-gray-800/20 to-gray-900/20">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500">
+                  Latest Blogs
+                </span>
+              </h2>
+              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+                Insights and updates from Active Learning Company
+              </p>
+              <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <BlogSlider />
+          </div>
+        </section>
+
+        {/* Trust Badges */}
       <section className="py-12 bg-gray-800/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8">
@@ -1322,27 +1316,27 @@ const BlogSlider = () => {
           const image =
             post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
           return (
-            <a
+            <Link
               key={post.id}
-              href={`/blog/${post.id}`}
+              to={`/blog/${post.id}`}
               className="w-full flex-shrink-0 px-3"
             >
-              <div className="bg-white rounded-xl shadow overflow-hidden">
+              <div className="rounded-2xl overflow-hidden bg-gray-800/60 backdrop-blur-md border border-gray-700">
                 {image && (
                   <img
                     src={image}
                     alt=""
-                    className="h-56 w-full object-cover"
+                    className="h-56 w-full object-cover rounded-t-2xl"
                   />
                 )}
                 <div className="p-4">
                   <h3
-                    className="font-semibold mb-2"
+                    className="font-semibold mb-2 text-gray-100"
                     dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                   />
                 </div>
               </div>
-            </a>
+            </Link>
           );
         })}
       </div>

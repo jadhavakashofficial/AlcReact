@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,7 +45,7 @@ export default function Header() {
 
   return (
     <>
-      <motion.header
+      <Motion.header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled 
             ? 'bg-white/95 shadow-sm py-1 backdrop-blur-sm'
@@ -58,7 +58,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <motion.div 
+            <Motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex-shrink-0"
@@ -74,7 +74,7 @@ export default function Header() {
                   }`}
                 />
               </Link>
-            </motion.div>
+            </Motion.div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-2">
@@ -112,7 +112,7 @@ export default function Header() {
                 
                 <AnimatePresence>
                   {isProfileDropdownOpen && (
-                    <motion.div
+                    <Motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -137,12 +137,12 @@ export default function Header() {
                       >
                         My Orders
                       </a>
-                    </motion.div>
+                    </Motion.div>
                   )}
                 </AnimatePresence>
               </div>
               
-              <motion.a
+              <Motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/courses"
@@ -153,12 +153,12 @@ export default function Header() {
                 }`}
               >
                 Enroll Now
-              </motion.a>
+              </Motion.a>
             </nav>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
-              <motion.button
+              <Motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={toggleMobileMenu}
                 className={`p-2 rounded-md ${scrolled ? 'text-gray-800' : 'text-white'}`}
@@ -167,16 +167,16 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                     d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
                 </svg>
-              </motion.button>
+              </Motion.button>
             </div>
           </div>
         </div>
-      </motion.header>
+      </Motion.header>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <Motion.div
             className="fixed top-16 inset-x-0 z-40 bg-white/95 shadow-lg md:hidden backdrop-blur-sm"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
@@ -218,7 +218,7 @@ export default function Header() {
                 
                 <AnimatePresence>
                   {isMobileProfileDropdownOpen && (
-                    <motion.div
+                    <Motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
@@ -240,7 +240,7 @@ export default function Header() {
                       >
                         My Orders
                       </a>
-                    </motion.div>
+                    </Motion.div>
                   )}
                 </AnimatePresence>
               </div>
@@ -252,7 +252,7 @@ export default function Header() {
                 Enroll Now
               </a>
             </div>
-          </motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
     </>

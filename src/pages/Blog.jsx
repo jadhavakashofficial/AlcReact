@@ -28,19 +28,19 @@ export default function Blog() {
   }, [id]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Header />
-      <main className="flex-grow max-w-3xl mx-auto p-4">
+      <main className="flex-grow pt-32 pb-16 max-w-3xl mx-auto px-4">
         {loading ? (
-          <p className="text-center">Loading...</p>
+          <p className="text-center text-gray-200">Loading...</p>
         ) : post ? (
-          <article className="prose lg:prose-lg max-w-none">
+          <article className="prose lg:prose-lg max-w-none text-gray-200 bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700">
             <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
             {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
               <img
                 src={post._embedded['wp:featuredmedia'][0].source_url}
                 alt=""
-                className="w-full h-auto mb-4"
+                className="w-full h-auto mb-4 rounded-xl"
               />
             )}
             <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
